@@ -1,0 +1,51 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1696086221
+button_template.tscn::PackedScene::5947647339724888622::1695569591::0::1::::<><>::uid://bx5q4c4qu8wsu
+control.tscn::PackedScene::3817967020634879657::1696086132::0::1::::<><>::res://scripts/story_manager.gd<>uid://bpvc5ngmcx44h::::res://images/1px.png<>uid://csxhrl2dse1p0::::res://label_template.tscn<>uid://b1f267ha507he::::res://image_template.tscn<>uid://cq0c5aosxebry::::res://button_template.tscn<>res://addons/SmoothScroll/SmoothScrollContainer.gd<>uid://dspw1qwlrxdb3::::res://fonts/Karla/static/Karla-Bold.ttf<>res://scripts/settings_manager.gd<>uid://bsom7vjdwsv5n::::res://fonts/Karla/static/Karla-ExtraBold.ttf
+default_bus_layout.tres::AudioBusLayout::8547430374322778127::1696082549::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1695215882::0::1::::<><>::
+icon.svg::CompressedTexture2D::5037746695947961098::1695215565::1695215571::1::::<><>::
+image_template.tscn::PackedScene::4223348917069933658::1695569591::0::1::::<><>::uid://dja31vikn1j50
+label_template.tscn::PackedScene::6084177238287027295::1695569984::0::1::::<><>::uid://bx5q4c4qu8wsu
+::res://addons/::1695487269
+::res://addons/SmoothScroll/::1695559674
+class-icon.svg::CompressedTexture2D::8177468906778761583::1688566199::1695487271::1::::<><>::
+debug_font.tres::SystemFont::6385287303330840776::1688566199::0::1::::<><>::
+plugin.cfg::TextFile::-1::1688566199::0::1::::<><>::
+plugin.gd::GDScript::-1::1688566199::0::1::::<>EditorPlugin<>::
+SmoothScrollContainer.gd::GDScript::-1::1695559674::0::1::::<>ScrollContainer<>::
+::res://fonts/::1695565412
+::res://fonts/Karla/::1695565417
+Karla-Italic-VariableFont_wght.ttf::FontFile::3822337932405918559::1695565412::1695565412::1::::<><>::
+Karla-VariableFont_wght.ttf::FontFile::8577007330946467084::1695565412::1695565412::1::::<><>::
+::res://fonts/Karla/static/::1695565412
+Karla-Bold.ttf::FontFile::8455009982239886578::1695565412::1695565412::1::::<><>::
+Karla-BoldItalic.ttf::FontFile::639060580424972324::1695565412::1695565412::1::::<><>::
+Karla-ExtraBold.ttf::FontFile::3679508024112706285::1695565412::1695565412::1::::<><>::
+Karla-ExtraBoldItalic.ttf::FontFile::225759223696074773::1695565412::1695565412::1::::<><>::
+Karla-ExtraLight.ttf::FontFile::3151078792104246385::1695565412::1695565412::1::::<><>::
+Karla-ExtraLightItalic.ttf::FontFile::3924448841730039583::1695565412::1695565412::1::::<><>::
+Karla-Italic.ttf::FontFile::908744077346696195::1695565412::1695565412::1::::<><>::
+Karla-Light.ttf::FontFile::6054261292562422452::1695565412::1695565412::1::::<><>::
+Karla-LightItalic.ttf::FontFile::812697310558813051::1695565412::1695565412::1::::<><>::
+Karla-Medium.ttf::FontFile::4063718830498189528::1695565412::1695565412::1::::<><>::
+Karla-MediumItalic.ttf::FontFile::6792920411519511189::1695565412::1695565412::1::::<><>::
+Karla-Regular.ttf::FontFile::5354387144154860004::1695565412::1695565412::1::::<><>::
+Karla-SemiBold.ttf::FontFile::3740709767356282588::1695565412::1695565412::1::::<><>::
+Karla-SemiBoldItalic.ttf::FontFile::615662714938008888::1695565412::1695565412::1::::<><>::
+::res://images/::1695563267
+1px.png::CompressedTexture2D::3482780971522736557::1695223437::1695223926::1::::<><>::
+::res://scripts/::1696085937
+settings_manager.gd::GDScript::-1::1696085937::0::1::::<>Control<>::
+story_manager.gd::GDScript::-1::1696085226::0::1::::<>Control<>::
+::res://stories/::1695475081
+::res://stories/End of The Beginning/::1696086221
+story.txt::TextFile::-1::1696086132::0::1::::<><>::
+::res://stories/End of The Beginning/images/::1695998148
+cover.png::CompressedTexture2D::4804860407948045510::1695223519::1695486979::1::::<><>::
+this.jpg::CompressedTexture2D::7792709266082131225::1695223882::1695479283::1::::<><>::
+::res://stories/End of The Beginning/music/::1696084501
+chill2.mp3::AudioStreamMP3::5330174408110103486::1696084484::1696084501::1::::<><>::
+chill.mp3::AudioStreamMP3::6593367546313473084::1696082605::1696083406::1::::<><>::
+::res://stories/End of The Beginning/narration/::1696086221
+nar1.mp3::AudioStreamMP3::4068577880476032453::1696086220::1696086221::1::::<><>::

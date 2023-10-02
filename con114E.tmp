@@ -1,0 +1,419 @@
+[gd_scene load_steps=14 format=3 uid="uid://bunpmha3shwsv"]
+
+[ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_5uc3d"]
+[ext_resource type="Texture2D" uid="uid://bpvc5ngmcx44h" path="res://images/1px.png" id="1_s7mjj"]
+[ext_resource type="PackedScene" uid="uid://csxhrl2dse1p0" path="res://label_template.tscn" id="2_mx0ui"]
+[ext_resource type="PackedScene" uid="uid://b1f267ha507he" path="res://image_template.tscn" id="3_7jy0t"]
+[ext_resource type="PackedScene" uid="uid://cq0c5aosxebry" path="res://button_template.tscn" id="4_eplux"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="5_napu1"]
+[ext_resource type="FontFile" uid="uid://dspw1qwlrxdb3" path="res://fonts/Karla/static/Karla-Bold.ttf" id="7_6m6in"]
+[ext_resource type="Script" path="res://scripts/settings_manager.gd" id="7_fn8k0"]
+[ext_resource type="FontFile" uid="uid://bsom7vjdwsv5n" path="res://fonts/Karla/static/Karla-ExtraBold.ttf" id="9_la4s0"]
+
+[sub_resource type="Animation" id="Animation_0egpq"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Story/Settings:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Story/Settings:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aug1j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Story/Settings:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Story/Settings:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m4lk6"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Story/Settings:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Story/Settings:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eplyn"]
+_data = {
+"RESET": SubResource("Animation_aug1j"),
+"close": SubResource("Animation_m4lk6"),
+"open": SubResource("Animation_0egpq")
+}
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Story" type="Control" parent="." node_paths=PackedStringArray("page")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5uc3d")
+page = NodePath("Body/ScrollContainer/Page")
+label_template = ExtResource("2_mx0ui")
+image_template = ExtResource("3_7jy0t")
+button_template = ExtResource("4_eplux")
+
+[node name="Body" type="Control" parent="Story"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 65.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Story/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("5_napu1")
+damping_drag = 0.5
+
+[node name="Page" type="VBoxContainer" parent="Story/Body/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+
+[node name="LabelTemplate" parent="Story/Body/ScrollContainer/Page" instance=ExtResource("2_mx0ui")]
+visible = false
+layout_mode = 2
+
+[node name="ImageTemplate" parent="Story/Body/ScrollContainer/Page" instance=ExtResource("3_7jy0t")]
+visible = false
+layout_mode = 2
+
+[node name="ButtonTemplate" parent="Story/Body/ScrollContainer/Page" instance=ExtResource("4_eplux")]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="TextureRect" parent="Story"]
+self_modulate = Color(0.0980392, 0.0980392, 0.0980392, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="BackButton" type="TextureButton" parent="Story/Header"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -20.0
+offset_right = 55.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture_normal = ExtResource("1_s7mjj")
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="Story/Header"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -20.0
+offset_right = -65.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_6m6in")
+theme_override_font_sizes/font_size = 25
+text = "Title Here 1 2 3 4 5 6 7 8 9 0 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 4
+
+[node name="SettingsButton" type="TextureButton" parent="Story/Header"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("1_s7mjj")
+stretch_mode = 4
+
+[node name="Footer" type="TextureRect" parent="Story"]
+self_modulate = Color(0.0980392, 0.0980392, 0.0980392, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_s7mjj")
+
+[node name="PageNumber" type="Label" parent="Story/Footer"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 393.0
+offset_top = -13.0
+offset_right = -17.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_6m6in")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="StoryLog" type="Label" parent="Story/Footer"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -13.0
+offset_right = -95.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_6m6in")
+
+[node name="Settings" type="Control" parent="Story"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_fn8k0")
+
+[node name="SettingsBackground" type="TextureButton" parent="Story/Settings"]
+self_modulate = Color(0, 0, 0, 0.490196)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_s7mjj")
+stretch_mode = 0
+
+[node name="SettingsPage" type="TextureRect" parent="Story/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 126.0
+offset_right = -68.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+expand_mode = 1
+
+[node name="SettingsPageBackground" type="TextureRect" parent="Story/Settings/SettingsPage"]
+self_modulate = Color(0.196078, 0.196078, 0.196078, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Story/Settings/SettingsPage/SettingsPageBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="SettingsBackButton" type="TextureButton" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -17.5
+offset_right = 50.0
+offset_bottom = 17.5
+grow_vertical = 2
+texture_normal = ExtResource("1_s7mjj")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 71.0
+offset_top = -22.5
+offset_right = -71.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_la4s0")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Divider" type="TextureRect" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="Control2" type="Control" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -19.0
+offset_right = -105.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_la4s0")
+theme_override_font_sizes/font_size = 30
+text = "TURN TO PAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 235.0
+offset_top = -15.0
+offset_right = -9.9375
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10000.0
+
+[node name="Divider2" type="TextureRect" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Story/Settings"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_eplyn")
+}
+
+[connection signal="pressed" from="Story/Header/SettingsButton" to="Story/Settings" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Story/Settings/SettingsBackground" to="Story/Settings" method="_on_settings_background_pressed"]
+[connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/Control/SettingsBackButton" to="Story/Settings" method="_on_settings_back_button_pressed"]
+[connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/Control2/SpinBox" to="Story/Settings" method="_on_spin_box_value_changed"]
