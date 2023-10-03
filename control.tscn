@@ -547,6 +547,63 @@ libraries = {
 "": SubResource("AnimationLibrary_eplyn")
 }
 
+[node name="Bookmarks" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bookmarks"]
+self_modulate = Color(0, 0, 0, 0.490196)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="TextureRect2" type="TextureRect" parent="Bookmarks"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 257.0
+offset_right = -68.0
+offset_bottom = -257.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="TextureRect3" type="TextureRect" parent="Bookmarks/TextureRect2"]
+self_modulate = Color(0.133333, 0.133333, 0.133333, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="Label" type="Label" parent="Bookmarks/TextureRect2/TextureRect3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_la4s0")
+theme_override_font_sizes/font_size = 25
+text = "SAVE BOOKMARKS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Story/Header/SettingsButton" to="Story/Settings" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsBackground" to="Story/Settings" method="_on_settings_background_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TitleControl/SettingsBackButton" to="Story/Settings" method="_on_settings_back_button_pressed"]

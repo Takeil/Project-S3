@@ -48,7 +48,6 @@ func _on_music_volume_value_changed(value):
 	else:
 		AudioServer.set_bus_mute(music_bus, false)
 
-
 func _on_narration_volume_value_changed(value):
 	AudioServer.set_bus_volume_db(narration_bus, value)
 	if value == -30:
