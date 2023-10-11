@@ -54,3 +54,12 @@ func _on_narration_volume_value_changed(value):
 		AudioServer.set_bus_mute(narration_bus, true)
 	else:
 		AudioServer.set_bus_mute(narration_bus, false)
+
+func open_load_bookmarks(type: String):
+	if (type == "save"):
+		pass
+	elif (type == "load"):
+		pass
+
+func save_bookmark(index : int):
+	pass

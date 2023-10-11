@@ -201,7 +201,7 @@ func set_log_text(text: String):
 	log_timer.timeout.connect(_on_log_timer_timeout)
 	add_child(log_timer)
 	log_timer.start()
-
+ 
 func _on_log_timer_timeout():
 	# Clear the text when the timer times out
 	story_log_label.text = ""

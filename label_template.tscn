@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://csxhrl2dse1p0"]
+[gd_scene load_steps=7 format=3 uid="uid://csxhrl2dse1p0"]
 
+[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="1_1bk3f"]
 [ext_resource type="FontFile" uid="uid://bx5q4c4qu8wsu" path="res://fonts/Karla/static/Karla-Medium.ttf" id="1_ykauu"]
 
 [sub_resource type="Animation" id="Animation_gfcy2"]
@@ -59,6 +60,7 @@ _data = {
 [node name="LabelTemplate" type="Label"]
 modulate = Color(1, 1, 1, 0)
 mouse_filter = 1
+theme = ExtResource("1_1bk3f")
 theme_override_fonts/font = ExtResource("1_ykauu")
 text = "This is a label sample, and it can contain anything the book needs, and it automatically scales as well.
 

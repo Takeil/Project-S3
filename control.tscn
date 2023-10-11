@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bunpmha3shwsv"]
+[gd_scene load_steps=15 format=3 uid="uid://bunpmha3shwsv"]
 
 [ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_5uc3d"]
 [ext_resource type="Texture2D" uid="uid://bpvc5ngmcx44h" path="res://images/1px.png" id="1_s7mjj"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dspw1qwlrxdb3" path="res://fonts/Karla/static/Karla-Bold.ttf" id="7_6m6in"]
 [ext_resource type="Script" path="res://scripts/settings_manager.gd" id="7_fn8k0"]
 [ext_resource type="FontFile" uid="uid://bsom7vjdwsv5n" path="res://fonts/Karla/static/Karla-ExtraBold.ttf" id="9_la4s0"]
+[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="10_sosn4"]
 
 [sub_resource type="Animation" id="Animation_aug1j"]
 length = 0.001
@@ -547,7 +548,7 @@ libraries = {
 "": SubResource("AnimationLibrary_eplyn")
 }
 
-[node name="Bookmarks" type="Control" parent="."]
+[node name="Bookmarks" type="Control" parent="Story"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -555,7 +556,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Bookmarks"]
+[node name="TextureButton" type="TextureButton" parent="Story/Bookmarks"]
 self_modulate = Color(0, 0, 0, 0.490196)
 layout_mode = 1
 anchors_preset = 15
@@ -563,22 +564,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_s7mjj")
+texture_normal = ExtResource("1_s7mjj")
+stretch_mode = 0
 
-[node name="TextureRect2" type="TextureRect" parent="Bookmarks"]
+[node name="Body" type="TextureRect" parent="Story/Bookmarks"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 68.0
-offset_top = 257.0
+offset_top = 323.0
 offset_right = -68.0
-offset_bottom = -257.0
+offset_bottom = -323.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_s7mjj")
 
-[node name="TextureRect3" type="TextureRect" parent="Bookmarks/TextureRect2"]
+[node name="Holder" type="TextureRect" parent="Story/Bookmarks/Body"]
 self_modulate = Color(0.133333, 0.133333, 0.133333, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -592,7 +594,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_s7mjj")
 
-[node name="Label" type="Label" parent="Bookmarks/TextureRect2/TextureRect3"]
+[node name="TitleLabel" type="Label" parent="Story/Bookmarks/Body/Holder"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -603,6 +605,45 @@ theme_override_font_sizes/font_size = 25
 text = "SAVE BOOKMARKS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Story/Bookmarks/Body/Holder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button (auto)" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme = ExtResource("10_sosn4")
+theme_override_font_sizes/font_size = 20
+text = "[N/A] (auto)"
+text_overrun_behavior = 3
+
+[node name="Button2" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme = ExtResource("10_sosn4")
+theme_override_font_sizes/font_size = 20
+text = "[N/A]"
+
+[node name="Button3" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme = ExtResource("10_sosn4")
+theme_override_font_sizes/font_size = 20
+text = "[N/A]"
+
+[node name="Button4" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+theme = ExtResource("10_sosn4")
+theme_override_font_sizes/font_size = 20
+text = "[N/A]"
 
 [connection signal="pressed" from="Story/Header/SettingsButton" to="Story/Settings" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsBackground" to="Story/Settings" method="_on_settings_background_pressed"]
