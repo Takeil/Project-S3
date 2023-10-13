@@ -1,2 +1,3 @@
 res://control.tscn
 res://scripts/settings_manager.gd
+res://bookmarks.gd

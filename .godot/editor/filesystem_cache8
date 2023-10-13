@@ -1,7 +1,7 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1696994434
+::res://::1697181587
 button_template.tscn::PackedScene::5947647339724888622::1696478526::0::1::::<><>::uid://bej74pacdrpv8
-control.tscn::PackedScene::3817967020634879657::1696774601::0::1::::<><>::res://scripts/story_manager.gd<>uid://bpvc5ngmcx44h::::res://images/1px.png<>uid://csxhrl2dse1p0::::res://label_template.tscn<>uid://b1f267ha507he::::res://image_template.tscn<>uid://cq0c5aosxebry::::res://button_template.tscn<>res://addons/SmoothScroll/SmoothScrollContainer.gd<>uid://dspw1qwlrxdb3::::res://fonts/Karla/static/Karla-Bold.ttf<>res://scripts/settings_manager.gd<>uid://bsom7vjdwsv5n::::res://fonts/Karla/static/Karla-ExtraBold.ttf<>uid://bej74pacdrpv8::::res://main_theme.tres
+control.tscn::PackedScene::3817967020634879657::1697178532::0::1::::<><>::res://scripts/story_manager.gd<>uid://bpvc5ngmcx44h::::res://images/1px.png<>uid://csxhrl2dse1p0::::res://label_template.tscn<>uid://b1f267ha507he::::res://image_template.tscn<>uid://cq0c5aosxebry::::res://button_template.tscn<>res://addons/SmoothScroll/SmoothScrollContainer.gd<>uid://dspw1qwlrxdb3::::res://fonts/Karla/static/Karla-Bold.ttf<>res://scripts/settings_manager.gd<>uid://bsom7vjdwsv5n::::res://fonts/Karla/static/Karla-ExtraBold.ttf<>uid://bej74pacdrpv8::::res://main_theme.tres
 default_bus_layout.tres::AudioBusLayout::8547430374322778127::1696082549::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1695215882::0::1::::<><>::
 icon.svg::CompressedTexture2D::5037746695947961098::1695215565::1696417029::1::::<><>::
@@ -36,8 +36,8 @@ Karla-SemiBold.ttf::FontFile::3740709767356282588::1695565412::1695565412::1::::
 Karla-SemiBoldItalic.ttf::FontFile::615662714938008888::1695565412::1695565412::1::::<><>::
 ::res://images/::1695563267
 1px.png::CompressedTexture2D::3482780971522736557::1695223437::1695223926::1::::<><>::
-::res://scripts/::1696992487
-settings_manager.gd::GDScript::-1::1696774601::0::1::::<>Control<>::
+::res://scripts/::1697178532
+settings_manager.gd::GDScript::-1::1697178532::0::1::::<>Control<>::
 story_manager.gd::GDScript::-1::1696992487::0::1::::<>Control<>::
 ::res://stories/::1695475081
 ::res://stories/End of The Beginning/::1696086221

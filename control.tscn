@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bunpmha3shwsv"]
+[gd_scene load_steps=20 format=3 uid="uid://bunpmha3shwsv"]
 
 [ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_5uc3d"]
 [ext_resource type="Texture2D" uid="uid://bpvc5ngmcx44h" path="res://images/1px.png" id="1_s7mjj"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dspw1qwlrxdb3" path="res://fonts/Karla/static/Karla-Bold.ttf" id="7_6m6in"]
 [ext_resource type="Script" path="res://scripts/settings_manager.gd" id="7_fn8k0"]
 [ext_resource type="FontFile" uid="uid://bsom7vjdwsv5n" path="res://fonts/Karla/static/Karla-ExtraBold.ttf" id="9_la4s0"]
+[ext_resource type="Script" path="res://bookmarks.gd" id="10_belo2"]
 [ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="10_sosn4"]
 
 [sub_resource type="Animation" id="Animation_aug1j"]
@@ -99,6 +100,96 @@ _data = {
 "RESET": SubResource("Animation_aug1j"),
 "close": SubResource("Animation_m4lk6"),
 "open": SubResource("Animation_0egpq")
+}
+
+[sub_resource type="Animation" id="Animation_hhkgq"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e81lo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yytv6"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_or7fv"]
+_data = {
+"RESET": SubResource("Animation_e81lo"),
+"close": SubResource("Animation_yytv6"),
+"open": SubResource("Animation_hhkgq")
 }
 
 [node name="Game" type="Control"]
@@ -445,7 +536,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="LoadBookmarkButton" type="Button" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl"]
+[node name="SaveBookmarkButton" type="Button" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl"]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 anchor_left = 0.109756
@@ -456,7 +547,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/LoadBookmarkButton"]
+[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/SaveBookmarkButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -469,7 +560,7 @@ text = "SAVE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SaveBookmarkButton" type="Button" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl"]
+[node name="LoadBookmarkButton" type="Button" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl"]
 custom_minimum_size = Vector2(120, 40)
 layout_mode = 2
 anchor_left = 0.521341
@@ -480,7 +571,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/SaveBookmarkButton"]
+[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/LoadBookmarkButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -549,14 +640,16 @@ libraries = {
 }
 
 [node name="Bookmarks" type="Control" parent="Story"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("10_belo2")
 
-[node name="TextureButton" type="TextureButton" parent="Story/Bookmarks"]
+[node name="BookmarksBackground" type="TextureButton" parent="Story/Bookmarks"]
 self_modulate = Color(0, 0, 0, 0.490196)
 layout_mode = 1
 anchors_preset = 15
@@ -645,10 +738,18 @@ theme = ExtResource("10_sosn4")
 theme_override_font_sizes/font_size = 20
 text = "[N/A]"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Story/Bookmarks"]
+libraries = {
+"": SubResource("AnimationLibrary_or7fv")
+}
+
 [connection signal="pressed" from="Story/Header/SettingsButton" to="Story/Settings" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsBackground" to="Story/Settings" method="_on_settings_background_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TitleControl/SettingsBackButton" to="Story/Settings" method="_on_settings_back_button_pressed"]
 [connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/SpinBox" to="Story/Settings" method="_on_spin_box_value_changed"]
 [connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/MovePageButton" to="Story/Settings" method="_on_move_page_button_pressed"]
+[connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/SaveBookmarkButton" to="Story/Bookmarks" method="_on_save_bookmark_button_pressed"]
+[connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/LoadBookmarkButton" to="Story/Bookmarks" method="_on_load_bookmark_button_pressed"]
 [connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/MusicVolume" to="Story/Settings" method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/NarrationVolume" to="Story/Settings" method="_on_narration_volume_value_changed"]
+[connection signal="pressed" from="Story/Bookmarks/BookmarksBackground" to="Story/Bookmarks" method="_on_bookmarks_background_pressed"]
