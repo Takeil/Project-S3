@@ -1,3 +1,8 @@
+res://button_bookmark.tscn
+res://bookmarks.gd
 res://control.tscn
 res://scripts/settings_manager.gd
-res://bookmarks.gd
+res://scripts/story_manager.gd
+res://book_template.tscn
+res://scripts/main_menu.gd
+res://scripts/bookmarks.gd

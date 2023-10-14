@@ -1,1 +1,9 @@
-res://control.tscn::aa1a61ecb6e286b1fecfb055edd99dab::1695215711::res://.godot/exported/133200997/export-e66311c87c39ec8c25379305b5ae724b-control.scn
+res://addons/SmoothScroll/debug_font.tres::7f63f6f6a82187471c1bfd5915ce7934::1688566199::res://.godot/exported/133200997/export-088ffdf57c57146017158f09cc8d2871-debug_font.res
+res://button_bookmark.tscn::aeb1071b74d02396119c5be821f695d6::1697290445::res://.godot/exported/133200997/export-2e48d504a15e12dc2cf133da0bcab7c7-button_bookmark.scn
+res://button_template.tscn::08c8985c1af75b9fae1463deb246c827::1696478526::res://.godot/exported/133200997/export-c3317720b44f4ed211c23e333c837e83-button_template.scn
+res://control.tscn::fd08917673f04ef8967ca92cc613d07a::1697304433::res://.godot/exported/133200997/export-e66311c87c39ec8c25379305b5ae724b-control.scn
+res://default_bus_layout.tres::476cf1c1e110a44a516293042c7fb0cb::1696082549::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://image_template.tscn::51c59399369b04994045a1232e3a16c9::1695569591::res://.godot/exported/133200997/export-d19906d6c40160278ab7a54a52f717c3-image_template.scn
+res://label_template.tscn::3bb53cc9e15c0f4626e7d36fd256e646::1696481052::res://.godot/exported/133200997/export-e071a3e38989e3641abdc70458693426-label_template.scn
+res://main_theme.tres::bb401873bfe4136eabe0ce7a787bac0d::1696481045::res://.godot/exported/133200997/export-20b5b92c2f817caccb6dc24c0a7175e7-main_theme.res
+res://book_template.tscn::19f89760e9eb03c62e26a1f6f5863ad1::1697304083::res://.godot/exported/133200997/export-75a99d03c016ce80b4cbf86359d530f1-book_template.scn

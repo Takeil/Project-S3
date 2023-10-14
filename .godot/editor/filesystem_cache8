@@ -1,14 +1,22 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1697181587
+::res://::1697301150
+button_bookmark.tscn::PackedScene::3571929836447958263::1697290445::0::1::::<><>::uid://bej74pacdrpv8::::res://main_theme.tres
 button_template.tscn::PackedScene::5947647339724888622::1696478526::0::1::::<><>::uid://bej74pacdrpv8
-control.tscn::PackedScene::3817967020634879657::1697178532::0::1::::<><>::res://scripts/story_manager.gd<>uid://bpvc5ngmcx44h::::res://images/1px.png<>uid://csxhrl2dse1p0::::res://label_template.tscn<>uid://b1f267ha507he::::res://image_template.tscn<>uid://cq0c5aosxebry::::res://button_template.tscn<>res://addons/SmoothScroll/SmoothScrollContainer.gd<>uid://dspw1qwlrxdb3::::res://fonts/Karla/static/Karla-Bold.ttf<>res://scripts/settings_manager.gd<>uid://bsom7vjdwsv5n::::res://fonts/Karla/static/Karla-ExtraBold.ttf<>uid://bej74pacdrpv8::::res://main_theme.tres
+control.tscn::PackedScene::3817967020634879657::1697301149::0::1::::<><>::res://scripts/main_menu.gd<>res://scripts/story_manager.gd<>uid://bpvc5ngmcx44h::::res://images/1px.png<>uid://csxhrl2dse1p0::::res://label_template.tscn<>uid://bvqwc0hga4wpg::::res://book_template.tscn<>uid://b1f267ha507he::::res://image_template.tscn<>uid://cq0c5aosxebry::::res://button_template.tscn<>res://addons/SmoothScroll/SmoothScrollContainer.gd<>uid://dspw1qwlrxdb3::::res://fonts/Karla/static/Karla-Bold.ttf<>res://scripts/settings_manager.gd<>uid://bsom7vjdwsv5n::::res://fonts/Karla/static/Karla-ExtraBold.ttf<>uid://bq5jfr5re73qh::::res://button_bookmark.tscn<>res://scripts/bookmarks.gd
 default_bus_layout.tres::AudioBusLayout::8547430374322778127::1696082549::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1695215882::0::1::::<><>::
 icon.svg::CompressedTexture2D::5037746695947961098::1695215565::1696417029::1::::<><>::
 image_template.tscn::PackedScene::4223348917069933658::1695569591::0::1::::<><>::uid://dja31vikn1j50
 label_template.tscn::PackedScene::6084177238287027295::1696481052::0::1::::<><>::uid://bej74pacdrpv8
 main_theme.tres::Theme::2687750977769355679::1696481045::0::1::::<><>::uid://dspw1qwlrxdb3
-::res://addons/::1695487269
+book_template.tscn::PackedScene::3894757113756572356::1697301138::0::1::::<><>::uid://caprl4l7m0g8e::::res://stories/End of The Beginning/images/cover.png<>uid://dspw1qwlrxdb3::::res://fonts/Karla/static/Karla-Bold.ttf
+::res://addons/::1697286871
+::res://addons/save_system/::1697286873
+plugin.cfg::TextFile::-1::1696763388::0::1::::<><>::
+pluginlogo.png::CompressedTexture2D::7688752142866580147::1696763388::1697286873::1::::<><>::
+SaveSystem.gd::GDScript::-1::1696763388::0::1::::<>Node<>::
+save_system.gd::GDScript::-1::1696763388::0::1::::<>EditorPlugin<>::
+TestResource.gd::GDScript::-1::1696763388::0::1::::TestResource<>Resource<>::
 ::res://addons/SmoothScroll/::1696417029
 class-icon.svg::CompressedTexture2D::8177468906778761583::1688566199::1696417029::1::::<><>::
 debug_font.tres::SystemFont::6385287303330840776::1688566199::0::1::::<><>::
@@ -36,10 +44,12 @@ Karla-SemiBold.ttf::FontFile::3740709767356282588::1695565412::1695565412::1::::
 Karla-SemiBoldItalic.ttf::FontFile::615662714938008888::1695565412::1695565412::1::::<><>::
 ::res://images/::1695563267
 1px.png::CompressedTexture2D::3482780971522736557::1695223437::1695223926::1::::<><>::
-::res://scripts/::1697178532
-settings_manager.gd::GDScript::-1::1697178532::0::1::::<>Control<>::
-story_manager.gd::GDScript::-1::1696992487::0::1::::<>Control<>::
-::res://stories/::1695475081
+::res://scripts/::1697301135
+bookmarks.gd::GDScript::-1::1697301043::0::1::::<>Control<>::
+main_menu.gd::GDScript::-1::1697301135::0::1::::<>Control<>::
+settings_manager.gd::GDScript::-1::1697301087::0::1::::<>Control<>::
+story_manager.gd::GDScript::-1::1697300995::0::1::::<>Control<>::
+::res://stories/::1697301161
 ::res://stories/End of The Beginning/::1696086221
 story.txt::TextFile::-1::1696086132::0::1::::<><>::
 ::res://stories/End of The Beginning/images/::1695998148
@@ -50,3 +60,23 @@ chill2.mp3::AudioStreamMP3::5330174408110103486::1696084484::1696084501::1::::<>
 chill.mp3::AudioStreamMP3::6593367546313473084::1696082605::1696083406::1::::<><>::
 ::res://stories/End of The Beginning/narration/::1696086221
 nar1.mp3::AudioStreamMP3::4068577880476032453::1696086220::1696086221::1::::<><>::
+::res://stories/End of The Beginning - Copy/::1697301160
+story.txt::TextFile::-1::1696086132::0::1::::<><>::
+::res://stories/End of The Beginning - Copy/images/::1697301160
+cover.png::CompressedTexture2D::4804860407948045510::1695223519::1697301164::1::::<><>::
+this.jpg::CompressedTexture2D::7792709266082131225::1695223882::1697301163::1::::<><>::
+::res://stories/End of The Beginning - Copy/music/::1697301160
+chill2.mp3::AudioStreamMP3::5330174408110103486::1696084484::1697301163::1::::<><>::
+chill.mp3::AudioStreamMP3::6593367546313473084::1696082605::1697301163::1::::<><>::
+::res://stories/End of The Beginning - Copy/narration/::1697301160
+nar1.mp3::AudioStreamMP3::4068577880476032453::1696086220::1697301163::1::::<><>::
+::res://stories/End of The Beginning - Copy (2)/::1697301161
+story.txt::TextFile::-1::1696086132::0::1::::<><>::
+::res://stories/End of The Beginning - Copy (2)/images/::1697301161
+cover.png::CompressedTexture2D::4804860407948045510::1695223519::1697301164::1::::<><>::
+this.jpg::CompressedTexture2D::7792709266082131225::1695223882::1697301163::1::::<><>::
+::res://stories/End of The Beginning - Copy (2)/music/::1697301161
+chill2.mp3::AudioStreamMP3::5330174408110103486::1696084484::1697301163::1::::<><>::
+chill.mp3::AudioStreamMP3::6593367546313473084::1696082605::1697301163::1::::<><>::
+::res://stories/End of The Beginning - Copy (2)/narration/::1697301161
+nar1.mp3::AudioStreamMP3::4068577880476032453::1696086220::1697301163::1::::<><>::

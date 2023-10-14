@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvqwc0hga4wpg"]
+
+[ext_resource type="Texture2D" uid="uid://caprl4l7m0g8e" path="res://stories/End of The Beginning/images/cover.png" id="1_npll4"]
+[ext_resource type="FontFile" uid="uid://dspw1qwlrxdb3" path="res://fonts/Karla/static/Karla-Bold.ttf" id="2_vmxea"]
+
+[node name="BookTemplate" type="TextureButton"]
+custom_minimum_size = Vector2(370, 0)
+mouse_filter = 1
+texture_normal = ExtResource("1_npll4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 18.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_vmxea")
+theme_override_font_sizes/font_size = 25
+text = "Title Example"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+text_overrun_behavior = 3

@@ -17,9 +17,11 @@ var story_log_label
 var scroll_container
 var music_stream_player
 var narration_stream_player
+var animator
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	animator = $AnimationPlayer
 	title_label = $Header/Title
 	page_number_label = $Footer/PageNumber
 	page_container = $Body/PageContainer/Page
@@ -27,17 +29,17 @@ func _ready():
 	scroll_container = $Body/PageContainer
 	music_stream_player = $Body/Audio/MusicStreamPlayer
 	narration_stream_player = $Body/Audio/NarrationStreamPlayer
-	
-	set_story("End of The Beginning")
-	move_to_page(1)
 
 func set_story(story_title: String):
 	# Get Title override
+	animator.play("open")
 	story = load_file("res://stories/" + story_title + "/story.txt")
 	var extracted_title = _get_string_between(story, "<title>", "</title>")
 	title = extracted_title.strip_edges()
 	if title != "":
 		title_label.text = title
+	
+	move_to_page(1)
 
 func move_to_page(page_num: int) -> void:
 	var page_content = _get_string_between(story, "<" + str(page_num) + ">", "</" + str(page_num) + ">")
@@ -49,6 +51,11 @@ func move_to_page(page_num: int) -> void:
 		page_number_label.text = str(page_num)
 		setup_page(page_content)
 		curr_page = page_num
+
+func close_story():
+	narration_stream_player.stop()
+	music_stream_player.stop()
+	animator.play("close")
 
 func setup_page(info: String):
 	var dat = info
@@ -126,7 +133,7 @@ func setup_page(info: String):
 					var music = load("res://stories/"+title+"/music/"+values[i])
 					music.set_loop(true)
 					
-					if (music == music_stream_player.stream):
+					if (music == music_stream_player.stream and music_stream_player.playing):
 						continue
 					
 					music_stream_player.stream = music
@@ -205,3 +212,6 @@ func set_log_text(text: String):
 func _on_log_timer_timeout():
 	# Clear the text when the timer times out
 	story_log_label.text = ""
+
+func _on_back_button_pressed():
+	close_story()

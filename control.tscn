@@ -1,16 +1,20 @@
-[gd_scene load_steps=20 format=3 uid="uid://bunpmha3shwsv"]
+[gd_scene load_steps=27 format=3 uid="uid://bunpmha3shwsv"]
 
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3e4qq"]
 [ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_5uc3d"]
 [ext_resource type="Texture2D" uid="uid://bpvc5ngmcx44h" path="res://images/1px.png" id="1_s7mjj"]
 [ext_resource type="PackedScene" uid="uid://csxhrl2dse1p0" path="res://label_template.tscn" id="2_mx0ui"]
+[ext_resource type="PackedScene" uid="uid://bvqwc0hga4wpg" path="res://book_template.tscn" id="3_6qvij"]
 [ext_resource type="PackedScene" uid="uid://b1f267ha507he" path="res://image_template.tscn" id="3_7jy0t"]
 [ext_resource type="PackedScene" uid="uid://cq0c5aosxebry" path="res://button_template.tscn" id="4_eplux"]
 [ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="5_napu1"]
 [ext_resource type="FontFile" uid="uid://dspw1qwlrxdb3" path="res://fonts/Karla/static/Karla-Bold.ttf" id="7_6m6in"]
 [ext_resource type="Script" path="res://scripts/settings_manager.gd" id="7_fn8k0"]
 [ext_resource type="FontFile" uid="uid://bsom7vjdwsv5n" path="res://fonts/Karla/static/Karla-ExtraBold.ttf" id="9_la4s0"]
-[ext_resource type="Script" path="res://bookmarks.gd" id="10_belo2"]
-[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="10_sosn4"]
+[ext_resource type="PackedScene" uid="uid://bq5jfr5re73qh" path="res://button_bookmark.tscn" id="11_nxbwx"]
+[ext_resource type="Script" path="res://scripts/bookmarks.gd" id="12_rgwpv"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_3lvus"]
 
 [sub_resource type="Animation" id="Animation_aug1j"]
 length = 0.001
@@ -102,34 +106,6 @@ _data = {
 "open": SubResource("Animation_0egpq")
 }
 
-[sub_resource type="Animation" id="Animation_hhkgq"]
-resource_name = "open"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_e81lo"]
 length = 0.001
 tracks/0/type = "value"
@@ -185,11 +161,129 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_hhkgq"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_or7fv"]
 _data = {
 "RESET": SubResource("Animation_e81lo"),
 "close": SubResource("Animation_yytv6"),
 "open": SubResource("Animation_hhkgq")
+}
+
+[sub_resource type="Animation" id="Animation_votfy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f18c8"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i3cbj"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q45t2"]
+_data = {
+"RESET": SubResource("Animation_votfy"),
+"close": SubResource("Animation_f18c8"),
+"open": SubResource("Animation_i3cbj")
 }
 
 [node name="Game" type="Control"]
@@ -200,7 +294,84 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3e4qq")
+book_template = ExtResource("3_6qvij")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+expand_mode = 1
+
+[node name="Body" type="Control" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainMenu/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 75.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("5_napu1")
+damping_drag = 0.5
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/Body/ScrollContainer"]
+custom_minimum_size = Vector2(0, 32.485)
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_right = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/Body/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 550)
+layout_mode = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Header" type="TextureRect" parent="MainMenu"]
+self_modulate = Color(0.0980392, 0.0980392, 0.0980392, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+texture = ExtResource("1_s7mjj")
+
+[node name="Footer" type="TextureRect" parent="MainMenu"]
+self_modulate = Color(0.0980392, 0.0980392, 0.0980392, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_s7mjj")
+
 [node name="Story" type="Control" parent="." node_paths=PackedStringArray("page")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -212,6 +383,17 @@ page = NodePath("Body/PageContainer/Page")
 label_template = ExtResource("2_mx0ui")
 image_template = ExtResource("3_7jy0t")
 button_template = ExtResource("4_eplux")
+
+[node name="TextureRect" type="TextureRect" parent="Story"]
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s7mjj")
+expand_mode = 1
 
 [node name="Body" type="Control" parent="Story"]
 layout_mode = 1
@@ -489,25 +671,27 @@ vertical_alignment = 1
 [node name="SpinBox" type="SpinBox" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.179878
+anchor_left = 0.332317
 anchor_top = 0.555556
-anchor_right = 0.689024
+anchor_right = 0.536776
 anchor_bottom = 0.9
 offset_right = 1.52588e-05
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_icons/updown = SubResource("ImageTexture_3lvus")
 min_value = 1.0
 max_value = 10000.0
+page = 1.0
 value = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MovePageButton" type="TextureButton" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.72561
-anchor_top = 0.533333
-anchor_right = 0.823171
-anchor_bottom = 0.888889
+anchor_left = 0.548781
+anchor_top = 0.555556
+anchor_right = 0.643293
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_s7mjj")
@@ -647,7 +831,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("10_belo2")
+script = ExtResource("12_rgwpv")
+button_template = ExtResource("11_nxbwx")
 
 [node name="BookmarksBackground" type="TextureButton" parent="Story/Bookmarks"]
 self_modulate = Color(0, 0, 0, 0.490196)
@@ -709,40 +894,17 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button (auto)" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
-custom_minimum_size = Vector2(145, 0)
-layout_mode = 2
-theme = ExtResource("10_sosn4")
-theme_override_font_sizes/font_size = 20
-text = "[N/A] (auto)"
-text_overrun_behavior = 3
-
-[node name="Button2" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
-custom_minimum_size = Vector2(145, 0)
-layout_mode = 2
-theme = ExtResource("10_sosn4")
-theme_override_font_sizes/font_size = 20
-text = "[N/A]"
-
-[node name="Button3" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
-custom_minimum_size = Vector2(145, 0)
-layout_mode = 2
-theme = ExtResource("10_sosn4")
-theme_override_font_sizes/font_size = 20
-text = "[N/A]"
-
-[node name="Button4" type="Button" parent="Story/Bookmarks/Body/Holder/HFlowContainer"]
-custom_minimum_size = Vector2(145, 0)
-layout_mode = 2
-theme = ExtResource("10_sosn4")
-theme_override_font_sizes/font_size = 20
-text = "[N/A]"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Story/Bookmarks"]
 libraries = {
 "": SubResource("AnimationLibrary_or7fv")
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Story"]
+libraries = {
+"": SubResource("AnimationLibrary_q45t2")
+}
+
+[connection signal="pressed" from="Story/Header/BackButton" to="Story" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Story/Header/SettingsButton" to="Story/Settings" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsBackground" to="Story/Settings" method="_on_settings_background_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TitleControl/SettingsBackButton" to="Story/Settings" method="_on_settings_back_button_pressed"]
