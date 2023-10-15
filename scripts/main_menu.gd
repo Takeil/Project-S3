@@ -4,10 +4,13 @@ extends Control
 var books_holder
 
 var story_node
-var dir = FileAccess
-var folder_dir = "res://stories/"
+var folder_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"
 
 func _ready():
+	
+	OS.request_permissions()
+	#await get_tree().on_request_permissions_result
+	
 	story_node = get_owner().get_node("Story")
 	books_holder = $Body/ScrollContainer/MarginContainer/HBoxContainer
 	var dir = DirAccess.open(folder_dir)
@@ -19,8 +22,17 @@ func _ready():
 				print("Found directory: " + file_name)
 				var node = book_template.instantiate()
 				
+				var path = (OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+file_name+"/cover.png")
+				if (FileAccess.file_exists(path)):
+					var file = FileAccess.open(path, FileAccess.READ)
+					var image = Image.new()
+					var t = ImageTexture.new()
+					image.load_png_from_buffer(file.get_buffer(file.get_length()))
+					
+					t.set_image(image)
+					node.texture_normal = t
+					
 				node.pressed.connect(story_node.set_story.bind(file_name))
-				node.texture_normal = load("res://stories/"+file_name+"/images/cover.png")
 				node.get_child(0).text = file_name
 				
 				books_holder.add_child(node)

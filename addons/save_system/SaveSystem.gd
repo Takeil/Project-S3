@@ -23,6 +23,7 @@ extends Node
 
 
 # The file path of your save data. You can freely modify this.
+# Default: const file_name = "user://save_data.sav"
 const file_name = "user://save_data.sav"
 
 var current_state_dictionary := {}

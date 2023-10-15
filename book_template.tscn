@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvqwc0hga4wpg"]
 
-[ext_resource type="Texture2D" uid="uid://caprl4l7m0g8e" path="res://stories/End of The Beginning/images/cover.png" id="1_npll4"]
+[ext_resource type="Texture2D" uid="uid://bpvc5ngmcx44h" path="res://images/1px.png" id="1_hixr1"]
 [ext_resource type="FontFile" uid="uid://dspw1qwlrxdb3" path="res://fonts/Karla/static/Karla-Bold.ttf" id="2_vmxea"]
 
 [node name="BookTemplate" type="TextureButton"]
 custom_minimum_size = Vector2(370, 0)
 mouse_filter = 1
-texture_normal = ExtResource("1_npll4")
+texture_normal = ExtResource("1_hixr1")
 ignore_texture_size = true
 stretch_mode = 5
 

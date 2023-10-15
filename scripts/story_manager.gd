@@ -18,6 +18,11 @@ var scroll_container
 var music_stream_player
 var narration_stream_player
 var animator
+var bookmarks
+
+#Music and Narration
+var curr_music
+var curr_nar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,11 +34,12 @@ func _ready():
 	scroll_container = $Body/PageContainer
 	music_stream_player = $Body/Audio/MusicStreamPlayer
 	narration_stream_player = $Body/Audio/NarrationStreamPlayer
+	bookmarks = $Bookmarks
 
 func set_story(story_title: String):
 	# Get Title override
 	animator.play("open")
-	story = load_file("res://stories/" + story_title + "/story.txt")
+	story = load_file(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/" + story_title + "/story.txt")
 	var extracted_title = _get_string_between(story, "<title>", "</title>")
 	title = extracted_title.strip_edges()
 	if title != "":
@@ -42,6 +48,7 @@ func set_story(story_title: String):
 	move_to_page(1)
 
 func move_to_page(page_num: int) -> void:
+	bookmarks.save_bookmark("A")
 	var page_content = _get_string_between(story, "<" + str(page_num) + ">", "</" + str(page_num) + ">")
 
 	if page_content == "":
@@ -108,13 +115,24 @@ func setup_page(info: String):
 				node.text = values[i]
 				page_container.add_child(node)
 			"img":
-				node = image_template.instantiate()
-				var file = FileAccess;
-				if file.file_exists("res://stories/"+title+"/images/"+values[i]):
-					node.texture = load("res://stories/"+title+"/images/"+values[i])
+				if FileAccess.file_exists(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/images/"+values[i]):
+					node = image_template.instantiate()
+					
+					var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/images/"+values[i]
+					var file = FileAccess.open(path, FileAccess.READ)
+					var image = Image.new()
+					var t = ImageTexture.new()
+					
+					if (values[i].contains("jpg")):
+						image.load_jpg_from_buffer(file.get_buffer(file.get_length()))
+					elif (values[i].contains("png")):
+						image.load_png_from_buffer(file.get_buffer(file.get_length()))
+					
+					t.set_image(image)
+					node.texture = t
 					page_container.add_child(node)
 				else:
-					print("res://stories/"+title+"/images/"+values[i]+" Does Not Exists")
+					print(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/images/"+values[i]+" Does Not Exists")
 			"btn":
 				var page_number = _get_string_between(values[i],"[","]")
 				
@@ -128,28 +146,39 @@ func setup_page(info: String):
 					
 					page_container.add_child(node)
 			"mus":
-				var file = FileAccess
-				if file.file_exists("res://stories/"+title+"/music/"+values[i]):
-					var music = load("res://stories/"+title+"/music/"+values[i])
+				if FileAccess.file_exists(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/music/"+values[i]):
+					
+					var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/music/"+values[i]
+					var file = FileAccess.open(path, FileAccess.READ)
+					var music = AudioStreamMP3.new()
+					music.data = file.get_buffer(file.get_length())
 					music.set_loop(true)
 					
-					if (music == music_stream_player.stream and music_stream_player.playing):
+					if (curr_music == values[i] and music_stream_player.playing):
 						continue
 					
+					curr_music = values[i]
 					music_stream_player.stream = music
 					music_stream_player.play()
 				else:
-					print("res://stories/"+title+"/music/"+values[i]+" Does Not Exists")
+					print(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/music/"+values[i]+" Does Not Exists")
 			"nar":
-				var file = FileAccess
-				if file.file_exists("res://stories/"+title+"/narration/"+values[i]):
-					var narration = load("res://stories/"+title+"/narration/"+values[i])
-					narration.set_loop(false)
+				if FileAccess.file_exists(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/narration/"+values[i]):
 					
+					var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/narration/"+values[i]
+					var file = FileAccess.open(path, FileAccess.READ)
+					var narration = AudioStreamMP3.new()
+					narration.data = file.get_buffer(file.get_length())
+					narration.set_loop(true)
+					
+					if (curr_nar == values[i] and narration_stream_player.playing):
+						continue
+					
+					curr_nar = values[i]
 					narration_stream_player.stream = narration
 					narration_stream_player.play()
 				else:
-					print("res://stories/"+title+"/narration/"+values[i]+" Does Not Exists")
+					print(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/narration/"+values[i]+" Does Not Exists")
 		
 		if node != null:
 			var _animator = node.get_node("AnimationPlayer")

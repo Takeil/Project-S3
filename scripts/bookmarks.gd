@@ -58,29 +58,35 @@ func open_bookmarks(type: String):
 		
 		if (type == "save"):
 			node.disabled = false
-			node.pressed.connect(save_bookmark.bind(i))
+			node.pressed.connect(save_bookmark_button.bind(i))
 			
 		elif (type == "load" and SaveSystem.has(bookmark_name)):
 			node.disabled = false
-			node.pressed.connect(load_bookmark.bind(i))
+			node.pressed.connect(load_bookmark_button.bind(i))
 
 		button_container.add_child(node)
 
 func _on_bookmarks_background_pressed():
 	close_bookmarks()
 
+func save_bookmark_button(index):
+	save_bookmark(index)
+	close_bookmarks()
+	story_node.set_log_text("Bookmark Saved!")
+
+func load_bookmark_button(index):
+	load_bookmark(index)
+	close_bookmarks()
+	
 func save_bookmark(index):
 	var bookmark_name = "B_" + story_node.get_title() + "_" + str(index)
 	SaveSystem.set_var(bookmark_name, story_node.get_current_page())
-	close_bookmarks()
-	story_node.set_log_text("Bookmark Saved!")
 
 func load_bookmark(index):
 	var bookmark_name = "B_" + story_node.get_title() + "_" + str(index)
 	var page = SaveSystem.get_var(bookmark_name)
-	close_bookmarks()
 	story_node.move_to_page(page)
-	
+
 func _on_save_bookmark_button_pressed():
 	open_bookmarks("save")
 

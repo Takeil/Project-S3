@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1f267ha507he"]
-
-[ext_resource type="Texture2D" uid="uid://dja31vikn1j50" path="res://stories/End of The Beginning/images/this.jpg" id="1_hsgvt"]
+[gd_scene load_steps=5 format=3 uid="uid://b1f267ha507he"]
 
 [sub_resource type="Animation" id="Animation_gfcy2"]
 length = 0.001
@@ -58,7 +56,6 @@ _data = {
 
 [node name="ImageTemplate" type="TextureRect"]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("1_hsgvt")
 expand_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
