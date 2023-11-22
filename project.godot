@@ -18,14 +18,14 @@ config/transparent_background=false
 
 [autoload]
 
-SaveSystem="*res://addons/save_system/SaveSystem.gd"
+Global="*res://scripts/Global.gd"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=800
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [dotnet]
@@ -34,7 +34,11 @@ project/assembly_name="Project S3"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
+enabled=PackedStringArray()
+
+[filesystem]
+
+import/blender/enabled=false
 
 [rendering]
 

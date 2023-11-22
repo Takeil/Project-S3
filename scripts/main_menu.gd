@@ -7,12 +7,11 @@ var story_node
 var folder_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"
 
 func _ready():
-	
 	OS.request_permissions()
 	#await get_tree().on_request_permissions_result
 	
 	story_node = get_owner().get_node("Story")
-	books_holder = $Body/ScrollContainer/MarginContainer/HBoxContainer
+	books_holder = $Body/ScrollContainer/MarginContainer/Container
 	var dir = DirAccess.open(folder_dir)
 	if dir:
 		dir.list_dir_begin()
@@ -30,10 +29,10 @@ func _ready():
 					image.load_png_from_buffer(file.get_buffer(file.get_length()))
 					
 					t.set_image(image)
-					node.texture_normal = t
-					
+					node.get_child(0).texture = t
+				
 				node.pressed.connect(story_node.set_story.bind(file_name))
-				node.get_child(0).text = file_name
+				node.get_child(1).text = file_name
 				
 				books_holder.add_child(node)
 			else:

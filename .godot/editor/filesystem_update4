@@ -1,5 +1,3 @@
 res://control.tscn
-res://scripts/main_menu.gd
-res://addons/save_system/SaveSystem.gd
-res://scripts/story_manager.gd
-res://scripts/bookmarks.gd
+res://main_theme.tres
+res://pattern_template.tscn

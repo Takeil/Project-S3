@@ -9,6 +9,16 @@ var title
 @export var button_template : PackedScene
 
 var button_container
+var path
+
+var bookmarks := {
+	"A" : 1,
+	"0" : 1,
+	"1" : 1,
+	"2" : 1
+}
+
+var is_open
 
 func _ready():
 	story_node = get_owner().get_node("Story")
@@ -19,8 +29,13 @@ func _ready():
 
 func close_bookmarks():
 	animator.play("close")
+	
+func setup():
+	path = "user://" + story_node.get_title() + "_data.sav"
+	bookmarks = load_bookmarks()
 
 func open_bookmarks(type: String):
+	setup()
 	setting_node.animator.play("close")
 	animator.play("open")
 	
@@ -36,33 +51,26 @@ func open_bookmarks(type: String):
 		button_container.remove_child(child)
 		child.queue_free()
 	
-	# AUTO SAVE START
-	var bookmark_name = "B_" + story_node.get_title() + "_A"
+	# AUTO SAVE
 	var node = button_template.instantiate()
-	if (SaveSystem.has(bookmark_name)):
-		node.text = str(SaveSystem.get_var(bookmark_name)) 
-	node.text += " (auto)"
-	if (type == "load" and SaveSystem.has(bookmark_name)):
+	node.text = str(bookmarks["A"]) + " (auto)"
+	if (type == "load"):
 		node.disabled = false
-		node.pressed.connect(load_bookmark.bind("A"))
+		node.pressed.connect(load_bookmark_button.bind("A"))
 	button_container.add_child(node)
 	# AUTO SAVE END
 	
 	for i in 3:
-		bookmark_name = "B_" + story_node.get_title() + "_" + str(i)
-		
 		node = button_template.instantiate()
-
-		if (SaveSystem.has(bookmark_name)):
-			node.text = str(SaveSystem.get_var(bookmark_name))
+		node.text = str(bookmarks[str(i)])
 		
 		if (type == "save"):
 			node.disabled = false
-			node.pressed.connect(save_bookmark_button.bind(i))
+			node.pressed.connect(save_bookmark_button.bind(str(i)))
 			
-		elif (type == "load" and SaveSystem.has(bookmark_name)):
+		elif (type == "load"):
 			node.disabled = false
-			node.pressed.connect(load_bookmark_button.bind(i))
+			node.pressed.connect(load_bookmark_button.bind(str(i)))
 
 		button_container.add_child(node)
 
@@ -79,12 +87,11 @@ func load_bookmark_button(index):
 	close_bookmarks()
 	
 func save_bookmark(index):
-	var bookmark_name = "B_" + story_node.get_title() + "_" + str(index)
-	SaveSystem.set_var(bookmark_name, story_node.get_current_page())
+	bookmarks[index] = story_node.get_current_page()
+	save_bookmarks_func()
 
 func load_bookmark(index):
-	var bookmark_name = "B_" + story_node.get_title() + "_" + str(index)
-	var page = SaveSystem.get_var(bookmark_name)
+	var page = load_bookmark_func(index)
 	story_node.move_to_page(page)
 
 func _on_save_bookmark_button_pressed():
@@ -95,6 +102,26 @@ func _on_load_bookmark_button_pressed():
 	
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		var bookmark_name = "B_" + story_node.get_title() + "_A"
-		SaveSystem.set_var(bookmark_name, story_node.get_current_page())
+		save_bookmark("A")
 		get_tree().quit() # default behavior
+
+func save_bookmarks_func():
+	if (story_node.get_title() != null and path != null):
+		var f = FileAccess.open(path, FileAccess.WRITE)
+		f.store_var(bookmarks)
+
+func load_bookmark_func(index):
+	bookmarks = load_bookmarks()
+	print(bookmarks)
+	return bookmarks[index]
+
+func load_bookmarks():
+	var bkmrks = bookmarks
+	if (FileAccess.file_exists(path)):
+		var f = FileAccess
+		if f.file_exists(path):
+			f = FileAccess.open(path, FileAccess.READ)
+			bkmrks = f.get_var()
+	else:
+		save_bookmarks_func()
+	return bkmrks

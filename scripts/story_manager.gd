@@ -5,10 +5,13 @@ extends Control
 @export var label_template : PackedScene
 @export var image_template : PackedScene
 @export var button_template : PackedScene
+@export var password_template : PackedScene
+@export var pattern_template : PackedScene
 
 var title := get_title()
 var story : String
 var curr_page : int
+var directory_prefix : String
 
 var title_label
 var page_number_label
@@ -38,19 +41,27 @@ func _ready():
 
 func set_story(story_title: String):
 	# Get Title override
+	
+	# if the story is custom
+	directory_prefix = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/";
+	
+	# if the story is official
+	# directory_prefix = "";
+	
 	animator.play("open")
-	story = load_file(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/" + story_title + "/story.txt")
+	story = load_file(directory_prefix + story_title + "/story.txt")
 	var extracted_title = _get_string_between(story, "<title>", "</title>")
 	title = extracted_title.strip_edges()
 	if title != "":
 		title_label.text = title
 	
+	bookmarks.setup()
 	move_to_page(1)
 
 func move_to_page(page_num: int) -> void:
-	bookmarks.save_bookmark("A")
+	#bookmarks.save_bookmark("A")
 	var page_content = _get_string_between(story, "<" + str(page_num) + ">", "</" + str(page_num) + ">")
-
+	
 	if page_content == "":
 		set_log_text("Page " + str(page_num) + " Does Not Exist")
 		print("Page " + str(page_num) + " Does Not Exist")
@@ -80,10 +91,10 @@ func setup_page(info: String):
 		if value != "" and type != "":
 			values.append(value.strip_edges())
 			types.append(type)
-
+	
 		if loop_breaker == 100 || value.length() + 5 + (type.length() * 2) > dat.length():
 			break
-
+	
 		dat = dat.substr(value.length() + 5 + (type.length() * 2))
 	
 	#print(values)
@@ -108,17 +119,21 @@ func setup_page(info: String):
 	
 	for i in range(values.size()):
 		var node = null
-		
+	
 		match types[i]:
+			
+			# Visual / Story Objects
+			
 			"p":
 				node = label_template.instantiate()
 				node.text = values[i]
 				page_container.add_child(node)
+	
 			"img":
-				if FileAccess.file_exists(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/images/"+values[i]):
+				if FileAccess.file_exists(directory_prefix+title+"/images/"+values[i]):
 					node = image_template.instantiate()
 					
-					var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/images/"+values[i]
+					var path = directory_prefix+title+"/images/"+values[i]
 					var file = FileAccess.open(path, FileAccess.READ)
 					var image = Image.new()
 					var t = ImageTexture.new()
@@ -132,7 +147,8 @@ func setup_page(info: String):
 					node.texture = t
 					page_container.add_child(node)
 				else:
-					print(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/images/"+values[i]+" Does Not Exists")
+					print(directory_prefix+title+"/images/"+values[i]+" Does Not Exists")
+	
 			"btn":
 				var page_number = _get_string_between(values[i],"[","]")
 				
@@ -145,10 +161,40 @@ func setup_page(info: String):
 					node.pressed.connect(move_to_page.bind(page_number.to_int()))
 					
 					page_container.add_child(node)
-			"mus":
-				if FileAccess.file_exists(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/music/"+values[i]):
+	
+			"pwd":
+				# Placeholder_text , correct_page, incorrect_page
+				var data = _get_string_between(values[i],"[","]").split(",")
+				
+				if (data.size() != 3):
+					#improper format
+					continue
+				
+				node = password_template.instantiate()
+				node.get_child(0).placeholder_text = values[i].left(values[i].find("["))
+				node.get_child(1).pressed.connect(password_button.bind(node.get_child(0), str(data[0]), data[1], data[2]))
+				
+				page_container.add_child(node)
+	
+			"pat":
+				var data = _get_string_between(values[i],"[","]").split(",")
+				
+				if (data.size() != 3):
+					#improper format
+					continue
 					
-					var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/music/"+values[i]
+				print(data[0].length())
+				node = pattern_template.instantiate()
+				node.setup(data[0].length())
+				node.get_child(1).pressed.connect(pattern_button.bind(node.get_child(0), str(data[0]), data[1], data[2]))
+				page_container.add_child(node)
+			
+			# Audio / Music Players
+			
+			"mus":
+				if FileAccess.file_exists(directory_prefix+title+"/music/"+values[i]):
+					
+					var path = directory_prefix+title+"/music/"+values[i]
 					var file = FileAccess.open(path, FileAccess.READ)
 					var music = AudioStreamMP3.new()
 					music.data = file.get_buffer(file.get_length())
@@ -161,15 +207,16 @@ func setup_page(info: String):
 					music_stream_player.stream = music
 					music_stream_player.play()
 				else:
-					print(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/music/"+values[i]+" Does Not Exists")
+					print(directory_prefix+title+"/music/"+values[i]+" Does Not Exists")
+	
 			"nar":
-				if FileAccess.file_exists(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/narration/"+values[i]):
+				if FileAccess.file_exists(directory_prefix+title+"/narration/"+values[i]):
 					
-					var path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/narration/"+values[i]
+					var path = directory_prefix+title+"/narration/"+values[i]
 					var file = FileAccess.open(path, FileAccess.READ)
 					var narration = AudioStreamMP3.new()
 					narration.data = file.get_buffer(file.get_length())
-					narration.set_loop(true)
+					narration.set_loop(false)
 					
 					if (curr_nar == values[i] and narration_stream_player.playing):
 						continue
@@ -178,11 +225,30 @@ func setup_page(info: String):
 					narration_stream_player.stream = narration
 					narration_stream_player.play()
 				else:
-					print(OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"+title+"/narration/"+values[i]+" Does Not Exists")
-		
+					print(directory_prefix+title+"/narration/"+values[i]+" Does Not Exists")
+	
 		if node != null:
 			var _animator = node.get_node("AnimationPlayer")
 			_animator.play("fade_in")
+
+func password_button(text_edit_node, correct_answer, correct, incorrect):
+	if (text_edit_node.text.to_lower() == correct_answer.to_lower()):
+		move_to_page(int(correct))
+	else:
+		move_to_page(int(incorrect))
+
+func pattern_button(parent_node, pattern, correct, incorrect):
+	var code = ""
+	for child in parent_node.get_children():
+		if(child.is_pressed()):
+			code += "1"
+		else:
+			code += "0"
+	if(code == pattern):
+		move_to_page(int(correct))
+	else:
+		move_to_page(int(incorrect))
+	return 0
 
 # Define a function to get the title
 func get_title() -> String:
