@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Project S3"
-run/main_scene="res://control.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+run/main_scene="res://scenes/control.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 config/transparent_background=false
 

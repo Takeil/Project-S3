@@ -39,28 +39,21 @@ func _ready():
 	narration_stream_player = $Body/Audio/NarrationStreamPlayer
 	bookmarks = $Bookmarks
 
-func set_story(story_title: String):
-	# Get Title override
-	
-	# if the story is custom
-	directory_prefix = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/";
-	
-	# if the story is official
-	# directory_prefix = "";
-	
+func set_story(prefix : String, story_title: String, page_override : int = 0 ):
 	animator.play("open")
-	story = load_file(directory_prefix + story_title + "/story.txt")
-	var extracted_title = _get_string_between(story, "<title>", "</title>")
+	directory_prefix = prefix
+	story = Global.load_file(prefix + story_title + "/story.txt")
+	var extracted_title = Global.get_string_between(story, "<title>", "</title>")
 	title = extracted_title.strip_edges()
 	if title != "":
 		title_label.text = title
 	
 	bookmarks.setup()
-	move_to_page(1)
+	move_to_page(page_override)
 
 func move_to_page(page_num: int) -> void:
 	#bookmarks.save_bookmark("A")
-	var page_content = _get_string_between(story, "<" + str(page_num) + ">", "</" + str(page_num) + ">")
+	var page_content = Global.get_string_between(story, "<" + str(page_num) + ">", "</" + str(page_num) + ">")
 	
 	if page_content == "":
 		set_log_text("Page " + str(page_num) + " Does Not Exist")
@@ -71,6 +64,7 @@ func move_to_page(page_num: int) -> void:
 		curr_page = page_num
 
 func close_story():
+	clear_page()
 	narration_stream_player.stop()
 	music_stream_player.stop()
 	animator.play("close")
@@ -85,8 +79,8 @@ func setup_page(info: String):
 	while true:
 		dat = dat.strip_edges()
 		loop_breaker += 1
-		var type = _get_string_between(dat, "<", ">")
-		var value = _get_string_between(dat, "<" + type + ">", "</" + type + ">")
+		var type = Global.get_string_between(dat, "<", ">")
+		var value = Global.get_string_between(dat, "<" + type + ">", "</" + type + ">")
 		
 		if value != "" and type != "":
 			values.append(value.strip_edges())
@@ -147,10 +141,10 @@ func setup_page(info: String):
 					node.texture = t
 					page_container.add_child(node)
 				else:
-					print(directory_prefix+title+"/images/"+values[i]+" Does Not Exists")
+					print(directory_prefix+title+"/images/"+values[i]+" Does Not Exist!")
 	
 			"btn":
-				var page_number = _get_string_between(values[i],"[","]")
+				var page_number = Global.get_string_between(values[i],"[","]")
 				
 				if not page_number == "":
 					node = button_template.instantiate()
@@ -164,9 +158,10 @@ func setup_page(info: String):
 	
 			"pwd":
 				# Placeholder_text , correct_page, incorrect_page
-				var data = _get_string_between(values[i],"[","]").split(",")
+				var data = Global.get_string_between(values[i],"[","]").split(",")
 				
 				if (data.size() != 3):
+					print("Improper Password Format!")
 					#improper format
 					continue
 				
@@ -177,9 +172,10 @@ func setup_page(info: String):
 				page_container.add_child(node)
 	
 			"pat":
-				var data = _get_string_between(values[i],"[","]").split(",")
+				var data = Global.get_string_between(values[i],"[","]").split(",")
 				
 				if (data.size() != 3):
+					print("Improper Pattern Format!")
 					#improper format
 					continue
 					
@@ -207,7 +203,7 @@ func setup_page(info: String):
 					music_stream_player.stream = music
 					music_stream_player.play()
 				else:
-					print(directory_prefix+title+"/music/"+values[i]+" Does Not Exists")
+					print(directory_prefix+title+"/music/"+values[i]+" Does Not Exist!")
 	
 			"nar":
 				if FileAccess.file_exists(directory_prefix+title+"/narration/"+values[i]):
@@ -225,7 +221,7 @@ func setup_page(info: String):
 					narration_stream_player.stream = narration
 					narration_stream_player.play()
 				else:
-					print(directory_prefix+title+"/narration/"+values[i]+" Does Not Exists")
+					print(directory_prefix+title+"/narration/"+values[i]+" Does Not Exist!")
 	
 		if node != null:
 			var _animator = node.get_node("AnimationPlayer")
@@ -263,28 +259,6 @@ func clear_page():
 	for child in page.get_children():
 		page.remove_child(child)
 		child.queue_free()
-
-func _get_string_between(string: String, first: String, end: String) -> String:
-	var from: int = string.find(first) + first.length()
-	var to: int = string.find(end)
-	
-	# Check if either 'first' or 'end' substrings are not found
-	if (from == -1 || to == -1):
-		return ""
-	
-	return string.substr(from, to - from)
-
-#This could be very very long
-func load_file(file_path: String) -> String:
-	var file = FileAccess
-	var file_text = ""
-	
-	if file.file_exists(file_path):
-		file_text = file.get_file_as_string(file_path)
-	else:
-		print("Failed to open the file: ", file_path)
-	
-	return file_text
 
 var log_timer = null
 func set_log_text(text: String):

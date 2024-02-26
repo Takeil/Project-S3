@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvqwc0hga4wpg"]
+
+[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="1_6th4q"]
+[ext_resource type="Texture2D" uid="uid://p3wgvw5gqdk3" path="res://images/cover.png" id="2_mc0oj"]
+[ext_resource type="FontFile" uid="uid://dy5qxvpes702r" path="res://fonts/Karla/static/Karla-Bold.ttf" id="3_u6cbb"]
+
+[node name="BookTemplate" type="TextureButton"]
+custom_minimum_size = Vector2(185, 275)
+offset_right = 370.0
+offset_bottom = 550.0
+mouse_filter = 1
+theme = ExtResource("1_6th4q")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BookImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mc0oj")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -40.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme = ExtResource("1_6th4q")
+theme_override_fonts/font = ExtResource("3_u6cbb")
+theme_override_font_sizes/font_size = 15
+text = "Title Example"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+text_overrun_behavior = 3

@@ -36,24 +36,12 @@ func close():
 func _on_settings_button_pressed():
 	open()
 
-func _on_settings_back_button_pressed():
-	close()
-
 func _on_settings_background_pressed():
 	close()
 
 func _on_spin_box_value_changed(value):
-	#if value == story_node.get_current_page():
-		#page_change = false
-	#else:
-		#page_change = true
-	change_to_page_value = value
-
-func _on_move_page_button_pressed():
 	close()
-	#if (page_change):
-	#	page_change = false
-	story_node.move_to_page(change_to_page_value)
+	story_node.move_to_page(value)
 
 func _on_music_volume_value_changed(value):
 	

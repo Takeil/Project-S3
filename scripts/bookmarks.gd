@@ -42,11 +42,11 @@ func open_bookmarks(type: String):
 	if (type == "save"):
 		text.text = "SAVE BOOKMARK"
 		pass
-		
+	
 	elif (type == "load"):
 		text.text = "LOAD BOOKMARK"
 		pass
-		
+	
 	for child in button_container.get_children():
 		button_container.remove_child(child)
 		child.queue_free()
@@ -71,7 +71,7 @@ func open_bookmarks(type: String):
 		elif (type == "load"):
 			node.disabled = false
 			node.pressed.connect(load_bookmark_button.bind(str(i)))
-
+		
 		button_container.add_child(node)
 
 func _on_bookmarks_background_pressed():
@@ -99,7 +99,10 @@ func _on_save_bookmark_button_pressed():
 
 func _on_load_bookmark_button_pressed():
 	open_bookmarks("load")
-	
+
+func auto_save():
+	save_bookmark("A")
+
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		save_bookmark("A")
