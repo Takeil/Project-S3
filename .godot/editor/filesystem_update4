@@ -1,3 +1,4 @@
 res://scenes/control.tscn
-res://main_theme.tres
-res://scripts/effects_manager.gd
+res://themes/main_theme.tres
+res://scripts/main_menu.gd
+res://scripts/story_manager.gd

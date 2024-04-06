@@ -20,12 +20,17 @@ var story_log_label
 var scroll_container
 var music_stream_player
 var narration_stream_player
+var sound_stream_player
 var animator
 var bookmarks
+var effects_manager
+var selected_theme : Theme = Global.get_theme("main")
 
-#Music and Narration
+# Music and Narration
 var curr_music
-var curr_nar
+
+# Temp vars
+var temp_eff_list : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,11 +42,14 @@ func _ready():
 	scroll_container = $Body/PageContainer
 	music_stream_player = $Body/Audio/MusicStreamPlayer
 	narration_stream_player = $Body/Audio/NarrationStreamPlayer
+	sound_stream_player = $Body/Audio/SoundStreamPlayer
 	bookmarks = $Bookmarks
+	effects_manager = get_parent().get_node("Effects")
 
-func set_story(prefix : String, story_title: String, page_override : int = 0 ):
+func set_story(prefix : String, story_title: String, _selected_theme : Theme, page_override : int = 0 ):
 	animator.play("open")
 	directory_prefix = prefix
+	selected_theme = _selected_theme
 	story = Global.load_file(prefix + story_title + "/story.txt")
 	var extracted_title = Global.get_string_between(story, "<title>", "</title>")
 	title = extracted_title.strip_edges()
@@ -91,9 +99,6 @@ func setup_page(info: String):
 	
 		dat = dat.substr(value.length() + 5 + (type.length() * 2))
 	
-	#print(values)
-	#print(types)
-	
 	# Clear page and create new objects
 	
 	for child in page.get_children():
@@ -113,7 +118,7 @@ func setup_page(info: String):
 	
 	for i in range(values.size()):
 		var node = null
-	
+		
 		match types[i]:
 			
 			# Visual / Story Objects
@@ -122,9 +127,18 @@ func setup_page(info: String):
 				node = label_template.instantiate()
 				node.text = values[i]
 				page_container.add_child(node)
-	
+			
 			"img":
-				if FileAccess.file_exists(directory_prefix+title+"/images/"+values[i]):
+				if (directory_prefix == Global.main_dir):
+					node = image_template.instantiate()
+					
+					var path = directory_prefix+title+"/images/"+values[i]
+					var texture = load(path)
+					node.texture = texture
+					
+					page_container.add_child(node)
+					
+				elif FileAccess.file_exists(directory_prefix+title+"/images/"+values[i]):
 					node = image_template.instantiate()
 					
 					var path = directory_prefix+title+"/images/"+values[i]
@@ -142,7 +156,7 @@ func setup_page(info: String):
 					page_container.add_child(node)
 				else:
 					print(directory_prefix+title+"/images/"+values[i]+" Does Not Exist!")
-	
+			
 			"btn":
 				var page_number = Global.get_string_between(values[i],"[","]")
 				
@@ -155,7 +169,7 @@ func setup_page(info: String):
 					node.pressed.connect(move_to_page.bind(page_number.to_int()))
 					
 					page_container.add_child(node)
-	
+			
 			"pwd":
 				# Placeholder_text , correct_page, incorrect_page
 				var data = Global.get_string_between(values[i],"[","]").split(",")
@@ -170,7 +184,7 @@ func setup_page(info: String):
 				node.get_child(1).pressed.connect(password_button.bind(node.get_child(0), str(data[0]), data[1], data[2]))
 				
 				page_container.add_child(node)
-	
+			
 			"pat":
 				var data = Global.get_string_between(values[i],"[","]").split(",")
 				
@@ -188,7 +202,18 @@ func setup_page(info: String):
 			# Audio / Music Players
 			
 			"mus":
-				if FileAccess.file_exists(directory_prefix+title+"/music/"+values[i]):
+				if (directory_prefix == Global.main_dir):
+					var path = directory_prefix+title+"/music/"+values[i]
+					var music = load(path)
+					
+					if (curr_music == values[i] and music_stream_player.playing):
+						continue
+					
+					curr_music = values[i]
+					music_stream_player.stream = music
+					music_stream_player.play()
+				
+				elif FileAccess.file_exists(directory_prefix+title+"/music/"+values[i]):
 					
 					var path = directory_prefix+title+"/music/"+values[i]
 					var file = FileAccess.open(path, FileAccess.READ)
@@ -204,9 +229,16 @@ func setup_page(info: String):
 					music_stream_player.play()
 				else:
 					print(directory_prefix+title+"/music/"+values[i]+" Does Not Exist!")
-	
+			
 			"nar":
-				if FileAccess.file_exists(directory_prefix+title+"/narration/"+values[i]):
+				if (directory_prefix == Global.main_dir):
+					var path = directory_prefix+title+"/narration/"+values[i]
+					var narration = load(path)
+					
+					narration_stream_player.stream = narration
+					narration_stream_player.play()
+					
+				elif FileAccess.file_exists(directory_prefix+title+"/narration/"+values[i]):
 					
 					var path = directory_prefix+title+"/narration/"+values[i]
 					var file = FileAccess.open(path, FileAccess.READ)
@@ -214,18 +246,44 @@ func setup_page(info: String):
 					narration.data = file.get_buffer(file.get_length())
 					narration.set_loop(false)
 					
-					if (curr_nar == values[i] and narration_stream_player.playing):
-						continue
-					
-					curr_nar = values[i]
 					narration_stream_player.stream = narration
 					narration_stream_player.play()
 				else:
 					print(directory_prefix+title+"/narration/"+values[i]+" Does Not Exist!")
-	
+			
+			"snd":
+				if FileAccess.file_exists(directory_prefix+title+"/sound/"+values[i]):
+					
+					var path = directory_prefix+title+"/sound/"+values[i]
+					var file = FileAccess.open(path, FileAccess.READ)
+					var sound = AudioStreamMP3.new()
+					sound.data = file.get_buffer(file.get_length())
+					sound.set_loop(false)
+					
+					sound_stream_player.stream = sound
+					sound_stream_player.play()
+				else:
+					print(directory_prefix+title+"/sound/"+values[i]+" Does Not Exist!")
+			
+			
+			# Visual Effects
+			
+			"eff":
+				effects_manager.open_particle(values[i])
+				temp_eff_list.append(values[i])
+		
 		if node != null:
+			node.set_theme(selected_theme)
 			var _animator = node.get_node("AnimationPlayer")
 			_animator.play("fade_in")
+	
+	for item in effects_manager.effect_list:
+		if temp_eff_list.find(item.to_lower()) == -1:
+			effects_manager.close_particle(item)
+	temp_eff_list.clear()
+	
+	if (types.find("mus") == -1):
+		music_stream_player.stop()
 
 func password_button(text_edit_node, correct_answer, correct, incorrect):
 	if (text_edit_node.text.to_lower() == correct_answer.to_lower()):

@@ -3,6 +3,9 @@ extends Node
 var folder_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/Pluma/stories/"
 var main_dir = "res://stories/"
 
+var main_theme : Theme = load("res://themes/main_theme.tres")
+var type_theme : Theme = load("res://themes/type_theme.tres")
+
 func get_string_between(string: String, first: String, end: String) -> String:
 	var from: int = string.find(first) + first.length()
 	var to: int = string.find(end)
@@ -42,3 +45,14 @@ func load_bookmark_page(title : String, index : String, default : int = 0):
 		return bookmarks[index]
 	else:
 		return default
+
+func open_message(message : String, time : float = 0.5):
+	pass
+
+func get_theme(type: String = "main"):
+	if (type == "main"):
+		return main_theme
+	elif (type == "type"):
+		return type_theme
+	else:
+		return main_theme

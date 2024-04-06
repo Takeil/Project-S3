@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://yejs0jld7mm8"]
 
 [ext_resource type="Script" path="res://scripts/pattern_script.gd" id="1_ojk6t"]
-[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="2_vy3h5"]
+[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://themes/main_theme.tres" id="2_vy3h5"]
 
 [sub_resource type="Animation" id="Animation_x153q"]
 length = 0.001

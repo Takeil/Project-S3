@@ -12,9 +12,35 @@ func _ready():
 	
 	story_node = get_owner().get_node("Story")
 	story_menu_node = get_owner().get_node("StoryMenu")
-	
+
 	books_holder = $Body/ScrollContainer/MarginContainer/Container
-	var dir = DirAccess.open(Global.folder_dir)
+	
+	var dir = DirAccess.open(Global.main_dir)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+				
+				var node = book_template.instantiate()
+				var path = (Global.main_dir + file_name + "/cover.png")
+				
+				var imported_resource = load(path)
+				node.get_child(0).texture = imported_resource
+				
+				#node.pressed.connect(story_node.set_story.bind(Global.main_dir, file_name))
+				node.pressed.connect(story_menu_node.open.bind(Global.main_dir, file_name, imported_resource))
+				node.get_child(1).text = file_name
+				
+				books_holder.add_child(node)
+			else:
+				print("Found file: " + file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access " + dir)
+
+	dir = DirAccess.open(Global.folder_dir)
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
@@ -44,4 +70,5 @@ func _ready():
 				print("Found file: " + file_name)
 			file_name = dir.get_next()
 	else:
-		print("An error occurred when trying to access the path.")
+		print("An error occurred when trying to access the path." + dir)
+	

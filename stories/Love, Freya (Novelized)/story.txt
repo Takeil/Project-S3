@@ -1,0 +1,347 @@
+<title> Love, Freya (Novelized) </title>
+
+<author> by Vienne Seo-yeon </author>
+
+<narrator> narrated by Narrator </narrator>
+
+<synopsis> Synopsis Here </synopsis>
+
+<story_type> adventure </story_type>
+
+// Prologue: Ethan's Office
+// Chapter 1: Ethan's House
+// Chapter 2: Outdoors
+// Chapter 3: Freya's House
+// Epilogue: The Hospital
+
+
+// Prologue:
+
+// Page 0:
+<0>
+<p>
+The hum of the fluorescent lights buzzed in the office as I sat hunched over my desk, fingers typing away hours of my life for a few words. The clatter of keys echoed in the screams of printers, conversations, and other keyboards racing against deadlines. Papers and files scattered around.
+
+As I delved into the abyss, my phone disrupted the noise with a harmonious melody. Her name illuminated the screen, a flash of color amid the grayscale of my work. I swiped to answer.
+
+"I'm waiting for you at the bus stop. Aren’t you coming?" She said in a sorrowful tone.
+
+"No, we already talked about this, right?"
+
+"But it’s been weeks since we last saw each other," she pleaded.
+
+"My schedule is hectic; you know how toxic my job is. There are tons of calls and emails to answer everyday."
+
+"But it’s our anniversary today. You didn’t even greet me... you won’t even spend time with me. Do you even miss me? Do you even love me?" Her voice trembled with a mixture of hurt and anger.
+
+"Is this the same argument again…" I sighed.
+
+"Yes. How many times have you promised? You told me that we’ll meet today. I was even looking forward to this day. You told me that we’ll fix this relationship, and yet you--"
+
+"And yet you can’t understand, Freya?! I’m working hard to build a better future. This is my love for you. You know that, right?" I sputtered.
+
+"Who cares about the future? You should care about me, I’m your girlfriend, Ethan!"
+
+"That is sacrifice! You… you’ll always be there; we’ll always make time..."
+
+"Ethan? That’s not how relationships work. You should learn how to balance your priorities…"
+
+"Our future is my priority," I declared.
+
+"And what about me? What about now?"
+
+"You know what, Freya, you’re the only one who makes a fuss about this! We’re not kids anymore! Grow up and realize that we need to strive for a better future. When will you realize that? Love is sacrifice," I asserted.
+
+"Ethan... today’s our anniversary-" Freya's voice wavered.
+
+"We can always celebrate our anniversary anytime! It doesn’t matter when or where, what’s important is that we’re together," I insisted.
+
+"Okay, Ethan, maybe you’re right... maybe I’m the only one who needs fixing," she conceded, her voice laced with resignation.
+
+"I can’t do this right now. I’ll call you later. Bye," I uttered. The weight of the conversation settling on my shoulders as I ended the call, leaving behind a digital silence, as the orchestra of my work began to play again.
+</p>
+<btn>Wake up [1]</btn>
+</0>
+
+// Chapter 1 (Ethan's House):
+// Area 1: Ethan's Bedroom
+
+<1>
+<p>
+The sun dipped below the horizon, casting a warm glow into the room as I stirred from a dream I couldn't quite remember. The elusive pieces clung to the fringes of my consciousness, leaving me with an unsettling sense of something just out of reach. The only thing I remembered was a face, Freya, framed by the wisps of a fading dream.
+
+I blinked away the remnants of sleep, and a peculiar awareness settled in. Her absence resonated within me, echoing the silent question of where she might be. Yet, it wasn't just her missing presence that unsettled me; it was also the unfamiliarity of my surroundings that tugged at the edges of my mind. Why am I here? This isn't our house; this is mine, or at least, it used to be. These walls held the echoes of my youth, memories I thought were locked away.
+
+The bedroom, with its familiar confines, felt emptier, quieter. Even though it was summer, the air felt cooler here, like the life of this room had long dissipated. I scanned the room, taking in the details of a past I struggled to recognize. The remnants of my childhood lingered in the corners, overshadowed by the stark reality of the present.
+
+My gaze wandered, searching for her in the subtle shadows of the room. The curtains danced gently with the evening breeze, hues of twilight painting the room in amber shades, casting long shadows that stretched like ephemeral fingers across the floor. Through the parted curtains, the world outside seemed to hold its breath, caught between day and night.
+
+A peculiar unease settled in my chest as I stood. Where was she? The question lingered in the air, unanswered. My search continued, I need to find her.
+
+I got up from my bed and started looking around.
+</p>
+
+<btn> Look inside the bedside table [2] </btn>
+<btn> Look inside the dresser [3] </btn>
+<btn> Look outside the window [4] </btn>
+<btn> Go to in the bathroom [5] </btn>
+<btn> Go to the hallway [7] </btn>
+</1>
+
+// Bedside Table (Drawing of a Parrot)
+<2>
+<p>
+I opened the bedside table, I discovered an awful drawing of a parrot - I should know. I drew it. The picture froze a moment in time. It has multiple folds, and the faded drawing brought back memories of my childhood. I tenderly closed the drawer, carefully tucking the drawing back into its hiding place.
+</p>
+<btn> Look inside the dresser [3] </btn>
+<btn> Look outside the window [4] </btn>
+<btn> Go to in the bathroom [5] </btn>
+<btn> Go to the hallway [7] </btn>
+</2>
+
+// Dresser
+<3>
+<p>
+Inside lay my old clothes, my favorite green tee, a weathered jacket marked by winters endured, and my trusty worn-out shoes that had faithfully accompanied me on various adventures.
+
+Beneath the pile of clothes, I saw an album from my teenage years with Freya. There she was, in the gazebo by the lake, both of us in her treehouse, and her silhouette against the balcony, bathed in the sunset's glow.
+
+I placed back the album and closed the dresser.
+</p>
+<btn> Look inside the bedside table [2] </btn>
+<btn> Look outside the window [4] </btn>
+<btn> Go to in the bathroom [5] </btn>
+<btn> Go to the hallway [7] </btn>
+</3>
+
+// Window
+<4>
+<p>
+Peering out the window, I saw the clothes rack, and the trees and their gently falling leaves. Despite the summer season, there's a sense that fall is approaching. Beyond our backyard boasts a sizable forest. Interestingly, Freya's childhood home is nearby. We used to be neighbors, after all.
+</p>
+<btn> Look inside the bedside table [2] </btn>
+<btn> Look inside the dresser [3] </btn>
+<btn> Go to in the bathroom [5] </btn>
+<btn> Go to the hallway [7] </btn>
+</4>
+
+// Bathroom A
+<5>
+<p>
+In the bathroom, the simple design made it feel calm. The clean tiles reflected soft light, and everything on the small countertop was neatly arranged. A mirror above the sink made the space seem bigger. There was a faint smell of lavender, and the enclosed shower promised a peaceful escape.
+</p>
+<btn> Go back to the bedroom [6] </btn>
+</5>
+
+// Bedroom (2)
+<6>
+<p>
+I entered my bedroom. The sun's rays gently streamed through the window, casting a warm glow-it was the tranquil moment of sunset.
+</p>
+<btn> Look inside the bedside table [2] </btn>
+<btn> Look inside the dresser [3] </btn>
+<btn> Look outside the window [4] </btn>
+<btn> Go to in the bathroom [5] </btn>
+<btn> Go to the hallway [7] </btn>
+</6>
+
+// Hallway
+<7>
+<p>
+As I stepped into the hallway, I paused to absorb my surroundings. Doors and arches around the corridor, leading to various areas on the second floor and a set of spiral stairs downward to the first floor next to a large window, lit by the sun's amber light.
+</p>
+<btn> Go inside my bedroom [6] </btn>
+<btn> Go inside the other bedroom [8] </btn>
+<btn> Go inside the recreational area [11] </btn>
+<btn> Go to the balcony [18] </btn>
+<btn> Go downstairs [20] </btn>
+</7>
+
+// Other bedroom
+<8>
+<p>
+I stepped into the second bedroom on the left, revealing my old room - the one where I slept in when my parents were still around.  There's a bedside table with a kid's lamp that has dinosaurs on it, a bookshelf almost filled with books, and piles of boxes that holds my old things that I haven't seen in quite some time. I opened the curtains, revealing a beautiful view outside. The golden hues of the setting sun painted the sky, casting a warm glow over a serene lake of houses surrounded by lush greenery.
+</p>
+<btn> Look inside the drawer [9] </btn>
+<btn> Look at the bookshelf [10] </btn>
+<btn> Go to the hallway [7] </btn>
+</8>
+
+// Drawer (CamCorder)
+<9>
+<p>
+I pulled open the drawer and, to my surprise, I saw my old camcorder. So this is where I left it. Flipping open the screen, I turned it on. The camera was still working. I saw it still had a few battery life left. I openned the gallery, a collection of videos and screenshots featuring Freya and I unfolded. I selected the most recent one.
+
+The video started, revealing myself in our kitchen. It struck me that this must have been during our visit to clean up the old room, explaining why the camera found its way into this drawer.
+
+"Ethan! Look at the camera!" she exclaimed. The audio from the camcorder was a bit static, but you could still understand it quite a bit.
+
+"Love!" I chuckled, attempting to deter her antics. "Stop doing that!"
+
+"Why?" she teased. "I'm capturing the first time you're cooking for me."
+
+"What, so you can watch it again?" I countered, a smile playing on my lips.
+
+"Yes," Even though I couldn't see her face, I remember her grinning, her eyes sparkling. "I want to remember this moment."
+
+"Pretty sure you won't," I remarked with a playful tone. "Because I'll always be here, cooking for you."
+
+"Aww!" she giggled. "I love you!"
+
+The video stopped. I closed the camcorder and the drawer as well.
+</p>
+<btn> Look at the bookshelf [10] </btn>
+<btn> Go to the hallway [7] </btn>
+</9>
+
+// Bookshelf
+<10>
+<p>
+I looked at the bookshelf, noticing a few empty spaces that is either missing or awaiting new additions. Nevertheless, there were still some books, including "Winter Confessions" and "The Fall of Kings," to name a few. A plastic potted plant added a touch of greenery, while a couple of cups brimmed with pens and pencils stood nearby. Sheets of paper scattered about, and a box of papers and files hinted at the history of my early workdays.
+</p>
+<btn> Look inside the drawer [9] </btn>
+<btn> Go to the hallway [7] </btn>
+</10>
+
+// Recreational Area
+<11>
+<p>
+I stepped into the recreational area, situated just to the right of the arch leading to the balcony. The room boasted a stylish cabinet brimming with paperwork, a guitar leaning against it, a computer for entertainment or work, a softly lit lamp, and vibrant posters adorning the walls. One of the posters was the movie we both saw for the first time, a cinematic adaptation of a book I had once gifted her. One of the windows framed the balcony, offering a picturesque view of the beautiful sunset over the lake.
+</p>
+<btn> Look at the Guitar [13] </btn>
+<btn> Check the Computer [14] </btn>
+<btn> Go to the hallway [7] </btn>
+</11>
+
+// Recreational Area (Exit Computer)
+<12>
+<p>
+I stepped back from the computer and looked around.
+</p>
+<btn> Look at the Guitar [13] </btn>
+<btn> Go to the hallway [7] </btn>
+</12>
+
+// Guitar
+<13>
+<aud> guitar.mp3 </aud>
+<p>
+I picked up the guitar and played a tune that I could still recall playing before.
+</p>
+<btn> Check the Computer [14] </btn>
+<btn> Go to the hallway [7] </btn>
+</13>
+
+// Computer (Ethan)
+<14>
+<p>
+It's locked.
+</p>
+<pwd> Enter Password... [110500, -100, 15] </pwd>
+<btn> Look at the Guitar [13] </btn>
+<btn> Go to the hallway [7] </btn>
+</14>
+
+// Computer (Ethan) Failed Password
+<15>
+<p>
+That's wrong.
+</p>
+<pwd> Enter Password... [110500, -100, 16] </pwd>
+<btn> Look at the Guitar [13] </btn>
+<btn> Go to the hallway [7] </btn>
+</15>
+
+// Computer (Ethan) Final Attempt
+<16>
+<p>
+It's still incorrect.
+</p>
+<pwd> Enter Password... [110500, -100, 17] </pwd>
+<btn> Look at the Guitar [13] </btn>
+<btn> Go to the hallway [7] </btn>
+</16>
+
+// Computer (Ethan) Failed
+<17>
+<p>
+I'm locked out, I'll try again later when I remember it.
+</p>
+<btn> Look at the Guitar [13] </btn>
+<btn> Go to the hallway [7] </btn>
+</17>
+
+// Balcony
+<18>
+<p>
+The balcony bathed in the bright glow of the sun. A simple setup adorned the space: a table with chairs, a couple of flourishing plants, and a captivating view of the lake where the sun is beginning its descent, casting warm hues across the scene.
+</p>
+<btn> Look at the Book [19] </btn>
+<btn> Go to the hallway [7] </btn>
+</18>
+
+// Book (Nightfall)
+<19>
+<p>
+On top of the table there lay a book. It's probably from my bookshelf. "Nightfall" by Alyssa Finch.
+
+Synopsis:
+Across the universe, life is formed. One planet, however, has lost its life. A mysterious star has landed on this planet, unknowingly; surprisingly.
+
+A lone boy found the star... wrecked, surrounded by debris, an unfortunate sight. But... inside it was an unconscious lady.
+
+Who is she? Would he save the lady or would the lady save him? 
+
+</p>
+<btn> Go to the hallway [7] </btn>
+</19>
+
+// Downstairs
+<20>
+<p>
+I headed to the spacious living room. In the center, there were two comfy sofas, perfectly placed around a soft carpet that added a touch of coziness. On the wall, the TV, accompanied by its speaker, was ready for entertainment, and a small table stood nearby, offering a convenient spot for various items. The layout of the room seamlessly guided the way to different parts of the ground floor, with one path leading to the bustling kitchen and several doors.
+</p>
+<btn> Go upstairs [7] </btn>
+<btn> Go to the kitchen area [21] </btn>
+<btn> Go to the bathroom [99] </btn>
+</20>
+
+// Kitchen area
+<21>
+<p>
+
+</p>
+<btn> Go upstairs [7] </btn>
+<btn> Go to the living room [20] </btn>
+<btn> Go to the bathroom [99] </btn>
+</21>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Emails
+
+<-100>
+<p>
+The computer unlocked, and I found my emails still open. In the favorites section, a glance revealed a collection of noteworthy emails.
+</p>
+<btn> View recent email [-101] </btn>
+<btn> View oldest email [-110] </btn>
+<btn> Close computer [12] </btn>
+</-100>

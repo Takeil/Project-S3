@@ -12,6 +12,7 @@ var book_background
 var synopsis_rick_text_label
 var buttons_container
 var story_node
+var selected_theme
 
 @export var button_template : PackedScene
 
@@ -43,6 +44,8 @@ func open(base_dir, file_name, image_texture):
 	if Global.source_contains(story,["<narrator>","</narrator>"]):
 		synopsis_rick_text_label.text += "[i]" + Global.get_string_between(story,"<narrator>","</narrator>") + "[/i]\n"
 	synopsis_rick_text_label.text += "[/center]\n"
+	
+	selected_theme = Global.get_theme(Global.get_string_between(story,"<theme>","</theme>"))
 	
 	synopsis_rick_text_label.text += Global.get_string_between(story,"<synopsis>","</synopsis>")
 	
@@ -82,14 +85,14 @@ func open(base_dir, file_name, image_texture):
 	
 	node = button_template.instantiate()
 	node.text = "New"
-	node.pressed.connect(story_node.set_story.bind(Global.folder_dir, file_name))
+	node.pressed.connect(story_node.set_story.bind(base_dir, file_name, selected_theme))
 	node.pressed.connect(close)
 	buttons_container.add_child(node)
 	
 	node = button_template.instantiate()
 	var auto_save_page = Global.load_bookmark_page(title_override, "A")
 	node.text = "Continue [" + str(auto_save_page) + "]"
-	node.pressed.connect(story_node.set_story.bind(Global.folder_dir, file_name, auto_save_page))
+	node.pressed.connect(story_node.set_story.bind(base_dir, file_name, selected_theme, auto_save_page))
 	node.pressed.connect(close)
 	buttons_container.add_child(node)
 

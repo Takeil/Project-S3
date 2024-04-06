@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cif6x73nb4qd7"]
 
-[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://main_theme.tres" id="1_ilq5h"]
+[ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://themes/main_theme.tres" id="1_ilq5h"]
 
 [node name="button_story_menu" type="Button"]
 size_flags_horizontal = 3

@@ -8,12 +8,14 @@ var change_to_page_value = 0
 
 var music_bus = AudioServer.get_bus_index("Music")
 var narration_bus = AudioServer.get_bus_index("Narration")
+var effect_bus = AudioServer.get_bus_index("Effects")
 
 var settings_file_path = "user://settings.sav"
 
 var settings_data = {
 	"music": 1,
-	"narration": 1
+	"narration": 1,
+	"effect": 1
 }
 
 func _ready():
@@ -26,6 +28,9 @@ func _ready():
 	
 	AudioServer.set_bus_volume_db(narration_bus, settings_data["narration"])
 	$SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/NarrationVolume.value = settings_data["narration"]
+	
+	#AudioServer.set_bus_volume_db(effect_bus, settings_data["effect"])
+	#$SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/EffectVolume.value = settings_data["effect"]
 
 func open():
 	animator.play("open")
@@ -64,6 +69,18 @@ func _on_narration_volume_value_changed(value):
 		AudioServer.set_bus_mute(narration_bus, true)
 	else:
 		AudioServer.set_bus_mute(narration_bus, false)
+
+
+func _on_effect_volume_value_changed(value):
+	
+	settings_data["effect"] = value
+	save_settings()
+	
+	AudioServer.set_bus_volume_db(effect_bus, value)
+	if value == -30:
+		AudioServer.set_bus_mute(effect_bus, true)
+	else:
+		AudioServer.set_bus_mute(effect_bus, false)
 
 func save_settings():
 	var f = FileAccess.open(settings_file_path, FileAccess.WRITE)
