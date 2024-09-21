@@ -44,5 +44,5 @@ theme_override_font_sizes/font_size = 15
 text = "Title Example"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 3
 text_overrun_behavior = 3
