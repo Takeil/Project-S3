@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0642hapwoon1"
+path="res://.godot/imported/chill.mp3-347fe6fe297426d74b1d2975dcc70d2b.mp3str"
+
+[deps]
+
+source_file="res://images/Types/End of The Beginning/music/chill.mp3"
+dest_files=["res://.godot/imported/chill.mp3-347fe6fe297426d74b1d2975dcc70d2b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

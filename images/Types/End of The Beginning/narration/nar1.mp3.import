@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx735bb3rpkrt"
+path="res://.godot/imported/nar1.mp3-f32f7f6a5f60281d1ef3e1fcbe40efa6.mp3str"
+
+[deps]
+
+source_file="res://images/Types/End of The Beginning/narration/nar1.mp3"
+dest_files=["res://.godot/imported/nar1.mp3-f32f7f6a5f60281d1ef3e1fcbe40efa6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

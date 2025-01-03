@@ -21,7 +21,7 @@ func _ready():
 		var file_name = dir.get_next()
 		while file_name != "":
 			if dir.current_is_dir():
-				print("Found directory: " + file_name)
+				print("Found in main directory: " + file_name)
 				
 				var node = book_template.instantiate()
 				var path = (Global.main_dir + file_name + "/cover.png")
@@ -38,7 +38,7 @@ func _ready():
 				print("Found file: " + file_name)
 			file_name = dir.get_next()
 	else:
-		print("An error occurred when trying to access " + dir)
+		print("An error occurred when trying to access: " + Global.main_dir)
 
 	dir = DirAccess.open(Global.folder_dir)
 	if dir:
@@ -46,7 +46,7 @@ func _ready():
 		var file_name = dir.get_next()
 		while file_name != "":
 			if dir.current_is_dir():
-				print("Found directory: " + file_name)
+				print("Found in local directory: " + file_name)
 				
 				var node = book_template.instantiate()
 				var path = (Global.folder_dir + file_name + "/cover.png")
@@ -70,5 +70,5 @@ func _ready():
 				print("Found file: " + file_name)
 			file_name = dir.get_next()
 	else:
-		print("An error occurred when trying to access the path." + dir)
+		print("An error occurred when trying to access the path: " + Global.folder_dir)
 	

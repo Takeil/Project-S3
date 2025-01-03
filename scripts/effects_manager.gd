@@ -39,7 +39,7 @@ func _ready():
 	random.randomize()
 	thunder_timer.connect("timeout", _on_thunder_timeout)
 
-func _process(delta):
+func _process(_delta):
 	_change_effects_size()
 
 func _change_effects_size():	

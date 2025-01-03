@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ch68gt8jtpbqs"
+path="res://.godot/imported/chill2.mp3-a5075830e3b3248a7a98ada261d4fec5.mp3str"
+
+[deps]
+
+source_file="res://images/Types/End of The Beginning/music/chill2.mp3"
+dest_files=["res://.godot/imported/chill2.mp3-a5075830e3b3248a7a98ada261d4fec5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

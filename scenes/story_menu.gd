@@ -74,6 +74,8 @@ func open(base_dir, file_name, image_texture):
 			change_story_btn_texture(4)
 		"adv_milti_end":
 			change_story_btn_texture(5)
+		"adventure":
+			change_story_btn_texture(6)
 		_: #undefined
 			change_story_btn_texture(0)
 	
