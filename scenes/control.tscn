@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://bunpmha3shwsv"]
+[gd_scene load_steps=95 format=4 uid="uid://bunpmha3shwsv"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3e4qq"]
 [ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_5uc3d"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cqcpyudd6tqn" path="res://images/Addons/Music  - Inactive.png" id="16_p1u67"]
 [ext_resource type="Texture2D" uid="uid://nu0ruel3u0ne" path="res://images/Addons/Narration  - Inactive.png" id="18_i804x"]
 [ext_resource type="Texture2D" uid="uid://dswqyopa4brq2" path="res://images/Rectangle_Rounded_H.png" id="34_fqnym"]
+[ext_resource type="FontFile" uid="uid://cxv0q2w7gukrb" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="36_ugm23"]
 [ext_resource type="Script" path="res://scripts/effects_manager.gd" id="37_3qph6"]
 [ext_resource type="Texture2D" uid="uid://dhg6mh87hpbpy" path="res://images/Rectangle_Rounded.png" id="37_b0dtl"]
 [ext_resource type="Texture2D" uid="uid://vjhq4djx4w00" path="res://images/effects/smoke.png" id="38_6dquu"]
@@ -45,6 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://c7vyhix6wvwvn" path="res://sounds/effects/fire.mp3" id="39_t42jb"]
 [ext_resource type="AudioStream" uid="uid://dqopp27w3uetu" path="res://sounds/effects/thunder.mp3" id="40_sg8te"]
 [ext_resource type="AudioStream" uid="uid://boxvkf2b0ncw3" path="res://sounds/effects/snow.mp3" id="41_4u1c8"]
+[ext_resource type="AudioStream" uid="uid://3kvc4lo6sivy" path="res://sounds/effects/fireflies.mp3" id="44_3eybq"]
 
 [sub_resource type="Animation" id="Animation_aknap"]
 length = 0.5
@@ -899,10 +901,10 @@ tracks/2/path = NodePath("StreamPlayer:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1005,23 +1007,55 @@ color_ramp = SubResource("GradientTexture1D_2jpbj")
 
 [sub_resource type="Gradient" id="Gradient_n1fvk"]
 offsets = PackedFloat32Array(0.00408163, 0.526531, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3rmni"]
 gradient = SubResource("Gradient_n1fvk")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_epoh8"]
-particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(100, 100, 0)
-direction = Vector3(0, 0, 0)
-angular_velocity_min = -90.0
-angular_velocity_max = 90.0
+spread = 180.0
+initial_velocity_max = 100.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
 gravity = Vector3(0, 0, 0)
-scale_min = 0.3
-scale_max = 0.7
-color = Color(1, 1, 1, 0.0588235)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 50.0
+radial_accel_min = -10.0
+radial_accel_max = 30.0
+tangential_accel_min = -20.0
+tangential_accel_max = 20.0
+scale_min = 0.0
+scale_max = 0.01
+color = Color(1, 1, 1, 0.294118)
 color_ramp = SubResource("GradientTexture1D_3rmni")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 5.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.05
+turbulence_initial_displacement_min = -10.0
+turbulence_initial_displacement_max = 10.0
+
+[sub_resource type="Gradient" id="Gradient_yrv2u"]
+offsets = PackedFloat32Array(0, 0.521236, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o8p3c"]
+gradient = SubResource("Gradient_yrv2u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1x447"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+color = Color(1, 1, 1, 0.196078)
+color_ramp = SubResource("GradientTexture1D_o8p3c")
 
 [sub_resource type="Gradient" id="Gradient_h6b0n"]
 offsets = PackedFloat32Array(0, 0.861224, 1)
@@ -1219,24 +1253,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
 script = ExtResource("5_napu1")
-damping_drag = 0.5
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/Body/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 35
-theme_override_constants/margin_top = 35
-theme_override_constants/margin_right = 35
-theme_override_constants/margin_bottom = 35
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
 
-[node name="Container" type="HFlowContainer" parent="MainMenu/Body/ScrollContainer/MarginContainer"]
+[node name="Container" type="VFlowContainer" parent="MainMenu/Body/ScrollContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 60
 alignment = 1
 
 [node name="BookDetails" type="Control" parent="MainMenu"]
@@ -1755,25 +1790,32 @@ text = "FLIP TO PAGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -56.0
-offset_top = -43.0
-offset_right = 56.0
-offset_bottom = -12.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 30.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
 theme = ExtResource("10_jd0kw")
 theme_override_icons/updown = SubResource("ImageTexture_3lvus")
-min_value = 1.0
 max_value = 10000.0
 page = 1.0
 value = 1.0
+select_all_on_focus = true
+
+[node name="Button" type="Button" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("10_jd0kw")
+theme_override_fonts/font = ExtResource("36_ugm23")
+text = ">"
 
 [node name="Divider2" type="TextureRect" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
 self_modulate = Color(0.705882, 0.705882, 0.705882, 1)
@@ -1926,11 +1968,11 @@ custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 texture = ExtResource("1_s7mjj")
 
-[node name="MusicControl2" type="Control" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
+[node name="FontControl" type="Control" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/FontControl"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1938,14 +1980,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -104.0
-offset_top = -46.0
+offset_top = -22.0
 offset_right = 104.0
-offset_bottom = 46.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("10_jd0kw")
 theme_override_constants/separation = 10
 alignment = 1
+
+[node name="Label" type="Label" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/FontControl/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("10_jd0kw")
+theme_override_font_sizes/font_size = 20
+text = "FONT SIZE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FontScroll" type="HScrollBar" parent="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/FontControl/VBoxContainer"]
+layout_mode = 2
+value = 50.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Story/Settings"]
 root_node = NodePath("../../..")
@@ -2073,7 +2127,7 @@ mouse_filter = 2
 script = ExtResource("37_3qph6")
 control_ref = NodePath("Control Reference")
 particleOccluder = NodePath("Particle LightOccluder2D")
-particleEffects = [NodePath("Rain"), NodePath("Fire"), NodePath("Smog"), NodePath("Snow"), NodePath("Leaf")]
+particleEffects = [NodePath("Rain"), NodePath("Fire"), NodePath("Smoke"), NodePath("Snow"), NodePath("Leaf"), NodePath("Fireflies")]
 vfx = [NodePath("Thunder")]
 thunder_timer = NodePath("Thunder/Timer")
 
@@ -2131,22 +2185,41 @@ libraries = {
 stream = ExtResource("39_t42jb")
 bus = &"Effects"
 
-[node name="Smog" type="GPUParticles2D" parent="Effects"]
+[node name="Fireflies" type="GPUParticles2D" parent="Effects"]
 position = Vector2(240, 400)
 scale = Vector2(3, 5)
 emitting = false
-amount = 100
+amount = 200
 process_material = SubResource("ParticleProcessMaterial_epoh8")
 texture = ExtResource("38_6dquu")
 lifetime = 5.0
 fixed_fps = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Effects/Smog"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Effects/Fireflies"]
 libraries = {
 "": SubResource("AnimationLibrary_dmnq3")
 }
 
-[node name="StreamPlayer" type="AudioStreamPlayer" parent="Effects/Smog"]
+[node name="StreamPlayer" type="AudioStreamPlayer" parent="Effects/Fireflies"]
+stream = ExtResource("44_3eybq")
+bus = &"Effects"
+
+[node name="Smoke" type="GPUParticles2D" parent="Effects"]
+position = Vector2(240, 400)
+scale = Vector2(3, 5)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_1x447")
+texture = ExtResource("38_6dquu")
+lifetime = 5.0
+fixed_fps = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Effects/Smoke"]
+libraries = {
+"": SubResource("AnimationLibrary_dmnq3")
+}
+
+[node name="StreamPlayer" type="AudioStreamPlayer" parent="Effects/Smoke"]
 bus = &"Effects"
 
 [node name="Snow" type="GPUParticles2D" parent="Effects"]
@@ -2216,8 +2289,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 24.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -2255,17 +2326,36 @@ text = "Open Particle"
 layout_mode = 2
 text = "Close Particle"
 
+[node name="StoryInfo" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureButton" parent="StoryInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="StoryMenu/Header/BackButton" to="StoryMenu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Story/Header/BackButton" to="Story" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Story/Header/BackButton" to="Story/Bookmarks" method="auto_save"]
 [connection signal="pressed" from="Story/Header/SettingsButton" to="Story/Settings" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsBackground" to="Story/Settings" method="_on_settings_background_pressed"]
-[connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/SpinBox" to="Story/Settings" method="_on_spin_box_value_changed"]
+[connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/HBoxContainer/SpinBox" to="Story/Settings" method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/TurnPageControl/HBoxContainer/Button" to="Story/Settings" method="_on_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/SaveBookmarkButton" to="Story/Bookmarks" method="_on_save_bookmark_button_pressed"]
 [connection signal="pressed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/BookmarksControl/LoadBookmarkButton" to="Story/Bookmarks" method="_on_load_bookmark_button_pressed"]
 [connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/MusicVolume" to="Story/Settings" method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/NarrationVolume" to="Story/Settings" method="_on_narration_volume_value_changed"]
 [connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/MusicControl/VBoxContainer/EffectVolume" to="Story/Settings" method="_on_effect_volume_value_changed"]
+[connection signal="value_changed" from="Story/Settings/SettingsPage/SettingsPageBackground/VBoxContainer/FontControl/VBoxContainer/FontScroll" to="Story/Settings" method="_on_font_size_changed"]
 [connection signal="pressed" from="Story/Bookmarks/BookmarksBackground" to="Story/Bookmarks" method="_on_bookmarks_background_pressed"]
 [connection signal="pressed" from="Effects Debug/GridContainer/Open btn" to="Effects" method="open_debug"]
 [connection signal="pressed" from="Effects Debug/GridContainer/Close btn" to="Effects" method="close_debug"]
