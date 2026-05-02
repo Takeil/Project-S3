@@ -1,5 +1,7 @@
 extends Control
 
+class_name StoryManager
+
 @export var page: Node
 
 @export var label_template : PackedScene
@@ -23,7 +25,7 @@ var narration_stream_player
 var sound_stream_player
 var animator
 var bookmarks
-var effects_manager
+var effects_manager : EffectsManager
 var selected_theme : Theme = Global.get_theme("main")
 
 # Music and Narration
@@ -60,7 +62,7 @@ func set_story(prefix : String, story_title: String, _selected_theme : Theme, pa
 	move_to_page(page_override)
 
 func move_to_page(page_num: int) -> void:
-	#bookmarks.save_bookmark("A")
+	bookmarks.save_bookmark("A")
 	var page_content = Global.get_string_between(story, "<" + str(page_num) + ">", "</" + str(page_num) + ">")
 	
 	if page_content == "":
@@ -75,6 +77,7 @@ func close_story():
 	clear_page()
 	narration_stream_player.stop()
 	music_stream_player.stop()
+	close_all_effects()
 	animator.play("close")
 
 func setup_page(info: String):
@@ -284,6 +287,10 @@ func setup_page(info: String):
 	
 	if (types.find("mus") == -1):
 		music_stream_player.stop()
+
+func close_all_effects():
+	for item in effects_manager.effect_list:
+		effects_manager.close_particle(item)
 
 func password_button(text_edit_node, correct_answer, correct, incorrect):
 	if (text_edit_node.text.to_lower() == correct_answer.to_lower()):

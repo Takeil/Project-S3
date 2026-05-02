@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://themes/main_theme.tres" id="1_62on7"]
 
-
 [node name="ButtonBookmark" type="Button"]
 custom_minimum_size = Vector2(145, 0)
 theme = ExtResource("1_62on7")

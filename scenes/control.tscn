@@ -1,18 +1,18 @@
 [gd_scene load_steps=95 format=4 uid="uid://bunpmha3shwsv"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3e4qq"]
-[ext_resource type="Script" path="res://scripts/story_manager.gd" id="1_5uc3d"]
-[ext_resource type="Script" path="res://scripts/Global.gd" id="1_kah1w"]
+[ext_resource type="Script" uid="uid://badpdsvwacrug" path="res://scripts/main_menu.gd" id="1_3e4qq"]
+[ext_resource type="Script" uid="uid://blgod2jmmvugt" path="res://scripts/story_manager.gd" id="1_5uc3d"]
+[ext_resource type="Script" uid="uid://b4lp6lqnktk25" path="res://scripts/Global.gd" id="1_kah1w"]
 [ext_resource type="Texture2D" uid="uid://bpvc5ngmcx44h" path="res://images/1px.png" id="1_s7mjj"]
 [ext_resource type="PackedScene" uid="uid://csxhrl2dse1p0" path="res://scenes/label_template.tscn" id="2_mx0ui"]
 [ext_resource type="PackedScene" uid="uid://bvqwc0hga4wpg" path="res://scenes/book_template.tscn" id="3_6qvij"]
 [ext_resource type="PackedScene" uid="uid://b1f267ha507he" path="res://scenes/image_template.tscn" id="3_7jy0t"]
 [ext_resource type="PackedScene" uid="uid://cq0c5aosxebry" path="res://scenes/buttons/button_template.tscn" id="4_eplux"]
-[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="5_napu1"]
+[ext_resource type="Script" uid="uid://c5qn3gwku3t1i" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="5_napu1"]
 [ext_resource type="Texture2D" uid="uid://p3wgvw5gqdk3" path="res://images/cover.png" id="6_1uemj"]
-[ext_resource type="Script" path="res://scenes/story_menu.gd" id="6_bs0tx"]
+[ext_resource type="Script" uid="uid://d3ea6wtgu8qww" path="res://scenes/story_menu.gd" id="6_bs0tx"]
 [ext_resource type="Texture2D" uid="uid://beopnt2v16w8n" path="res://images/Gradient.png" id="7_cnslg"]
-[ext_resource type="Script" path="res://scripts/settings_manager.gd" id="7_fn8k0"]
+[ext_resource type="Script" uid="uid://clk1tlt2sbt5w" path="res://scripts/settings_manager.gd" id="7_fn8k0"]
 [ext_resource type="Texture2D" uid="uid://dvewled2tdi1b" path="res://images/Types/Linear.png" id="8_daici"]
 [ext_resource type="Texture2D" uid="uid://bgaguugjdrpyu" path="res://images/Types/Mono Ending.png" id="9_i4qjt"]
 [ext_resource type="PackedScene" uid="uid://c178cbr70bedm" path="res://scenes/password_template.tscn" id="9_rycdb"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5jfr5re73qh" path="res://scenes/buttons/button_bookmark.tscn" id="11_nxbwx"]
 [ext_resource type="PackedScene" uid="uid://yejs0jld7mm8" path="res://scenes/pattern_template.tscn" id="11_pjl0e"]
 [ext_resource type="Texture2D" uid="uid://3tjit5kyto6i" path="res://images/Addons/Effects.png" id="12_c87xq"]
-[ext_resource type="Script" path="res://scripts/bookmarks.gd" id="12_rgwpv"]
+[ext_resource type="Script" uid="uid://cbju54nj8dknq" path="res://scripts/bookmarks.gd" id="12_rgwpv"]
 [ext_resource type="Texture2D" uid="uid://ba6i6adft5yxi" path="res://images/Types/Undefined.png" id="12_uivq7"]
 [ext_resource type="Texture2D" uid="uid://tkni0byghju8" path="res://images/Types/Advanced Multi Ending.png" id="12_wsq1f"]
 [ext_resource type="Texture2D" uid="uid://bhennaas5py0p" path="res://images/Addons/Puzzle.png" id="13_5npv4"]
@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://nu0ruel3u0ne" path="res://images/Addons/Narration  - Inactive.png" id="18_i804x"]
 [ext_resource type="Texture2D" uid="uid://dswqyopa4brq2" path="res://images/Rectangle_Rounded_H.png" id="34_fqnym"]
 [ext_resource type="FontFile" uid="uid://cxv0q2w7gukrb" path="res://fonts/Courier_Prime/CourierPrime-Regular.ttf" id="36_ugm23"]
-[ext_resource type="Script" path="res://scripts/effects_manager.gd" id="37_3qph6"]
+[ext_resource type="Script" uid="uid://j63v7nixrofq" path="res://scripts/effects_manager.gd" id="37_3qph6"]
 [ext_resource type="Texture2D" uid="uid://dhg6mh87hpbpy" path="res://images/Rectangle_Rounded.png" id="37_b0dtl"]
 [ext_resource type="Texture2D" uid="uid://vjhq4djx4w00" path="res://images/effects/smoke.png" id="38_6dquu"]
 [ext_resource type="AudioStream" uid="uid://bke64bl1drn40" path="res://sounds/effects/rain.mp3" id="38_shqhf"]
@@ -263,9 +263,9 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mn3bu"]
 _data = {
-"RESET": SubResource("Animation_aknap"),
-"close": SubResource("Animation_el7hr"),
-"open": SubResource("Animation_hyp5d")
+&"RESET": SubResource("Animation_aknap"),
+&"close": SubResource("Animation_el7hr"),
+&"open": SubResource("Animation_hyp5d")
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_3lvus"]
@@ -355,9 +355,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eplyn"]
 _data = {
-"RESET": SubResource("Animation_aug1j"),
-"close": SubResource("Animation_m4lk6"),
-"open": SubResource("Animation_0egpq")
+&"RESET": SubResource("Animation_aug1j"),
+&"close": SubResource("Animation_m4lk6"),
+&"open": SubResource("Animation_0egpq")
 }
 
 [sub_resource type="Image" id="Image_m7h54"]
@@ -692,9 +692,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_or7fv"]
 _data = {
-"RESET": SubResource("Animation_e81lo"),
-"close": SubResource("Animation_yytv6"),
-"open": SubResource("Animation_hhkgq")
+&"RESET": SubResource("Animation_e81lo"),
+&"close": SubResource("Animation_yytv6"),
+&"open": SubResource("Animation_hhkgq")
 }
 
 [sub_resource type="Animation" id="Animation_votfy"]
@@ -780,9 +780,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q45t2"]
 _data = {
-"RESET": SubResource("Animation_votfy"),
-"close": SubResource("Animation_f18c8"),
-"open": SubResource("Animation_i3cbj")
+&"RESET": SubResource("Animation_votfy"),
+&"close": SubResource("Animation_f18c8"),
+&"open": SubResource("Animation_i3cbj")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bckb2"]
@@ -973,9 +973,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dmnq3"]
 _data = {
-"RESET": SubResource("Animation_w1nn3"),
-"close": SubResource("Animation_bueog"),
-"open": SubResource("Animation_v7hau")
+&"RESET": SubResource("Animation_w1nn3"),
+&"close": SubResource("Animation_bueog"),
+&"open": SubResource("Animation_v7hau")
 }
 
 [sub_resource type="Gradient" id="Gradient_3a754"]
@@ -1206,8 +1206,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpb0t"]
 _data = {
-"RESET": SubResource("Animation_q47lg"),
-"play": SubResource("Animation_y28hr")
+&"RESET": SubResource("Animation_q47lg"),
+&"play": SubResource("Animation_y28hr")
 }
 
 [node name="Game" type="Control"]

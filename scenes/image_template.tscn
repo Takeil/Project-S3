@@ -49,9 +49,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5pc0t"]
 _data = {
-"RESET": SubResource("Animation_gfcy2"),
-"fade_in": SubResource("Animation_cr0di"),
-"fade_out": SubResource("Animation_vevrk")
+&"RESET": SubResource("Animation_gfcy2"),
+&"fade_in": SubResource("Animation_cr0di"),
+&"fade_out": SubResource("Animation_vevrk")
 }
 
 [node name="ImageTemplate" type="TextureRect"]

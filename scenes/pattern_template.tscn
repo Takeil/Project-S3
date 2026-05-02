@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://yejs0jld7mm8"]
 
-[ext_resource type="Script" path="res://scripts/pattern_script.gd" id="1_ojk6t"]
+[ext_resource type="Script" uid="uid://bcdxttkq7r7yh" path="res://scripts/pattern_script.gd" id="1_ojk6t"]
 [ext_resource type="Theme" uid="uid://bej74pacdrpv8" path="res://themes/main_theme.tres" id="2_vy3h5"]
 
 [sub_resource type="Animation" id="Animation_x153q"]
@@ -52,9 +52,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oowrj"]
 _data = {
-"RESET": SubResource("Animation_x153q"),
-"fade_in": SubResource("Animation_7aida"),
-"fade_out": SubResource("Animation_3ycvk")
+&"RESET": SubResource("Animation_x153q"),
+&"fade_in": SubResource("Animation_7aida"),
+&"fade_out": SubResource("Animation_3ycvk")
 }
 
 [node name="PatternTemplate" type="VBoxContainer"]

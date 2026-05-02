@@ -1,5 +1,7 @@
 extends Control
 
+class_name EffectsManager
+
 @export var control_ref : Control
 @export var particleOccluder : LightOccluder2D
 @export var particleEffects : Array[GPUParticles2D] = []
@@ -64,6 +66,10 @@ func _change_effects_size():
 			# Center, fill scale
 			_change_transform_settings(effect,  Vector2(control_ref.size.x/150, control_ref.size.y/150), Vector2(control_ref.size.x/2, control_ref.size.y/2))
 		
+		if (effect.name.to_lower() == "fireflies"):
+			# Center, fill scale
+			_change_transform_settings(effect,  Vector2(control_ref.size.x/150, control_ref.size.y/150), Vector2(control_ref.size.x/2, control_ref.size.y/2))
+		
 		pass
 
 func _change_transform_settings(node : Node, new_scale : Vector2, new_position : Vector2):
@@ -96,8 +102,9 @@ func open_particle(_name : String):
 			animation_controller.play("play")
 			
 			if (effect.name.to_lower() == "thunder"):
-				thunder_timer.wait_time = random.randi_range(30, 60)
+				thunder_timer.wait_time = random.randi_range(10, 60)
 				thunder_timer.start()
+				thunder_timer.paused = false
 
 func close_particle(_name : String):
 	for item in effects:
@@ -114,8 +121,10 @@ func close_particle(_name : String):
 		var effect = item.effect
 		var isOpen = item.isOpen
 		
-		if (effect.name.to_lower() == "thunder"):
+		if (effect.name.to_lower() == _name.to_lower()):
 			if (isOpen):
+				item.isOpen = false
+				thunder_timer.paused = true
 				thunder_timer.stop()
 	
 func open_debug():
@@ -133,5 +142,6 @@ func _on_thunder_timeout():
 		
 		if (isOpen):
 			if (effect.name.to_lower() == "thunder"):
+				thunder_timer.wait_time = random.randi_range(10, 60)
 				var animation_controller = effect.get_child(0)
 				animation_controller.play("play")

@@ -1,0 +1,139 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1747835149
+_thunder.mp3::AudioStreamMP3/AudioStreamMP3::1882350450522425199::1718688883::1742727580::1::::<><><>0<>0<>1de9e32ce7f1d94766e33ef65982cc56<>res://.godot/imported/_thunder.mp3-ce1f4ab5274b2f98cf3e89794a29e40f.mp3str::
+default_bus_layout.tres::AudioBusLayout/AudioBusLayout::8547430374322778127::1718688883::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1711967810::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D/CompressedTexture2D::5037746695947961098::1695215565::1742727581::1::::<><><>0<>0<>752ab3a9f44728a0a26247423551e4b5<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://addons/::1697466594
+::res://addons/SmoothScroll/::1742727581
+class-icon.svg::CompressedTexture2D/CompressedTexture2D::8177468906778761583::1688566199::1742727581::1::::<><><>0<>0<>dfc883f45a8fe846387183c4c255ba3f<>res://.godot/imported/class-icon.svg-c17de51589a7d30572bf401526524f64.ctex::
+debug_font.tres::SystemFont/SystemFont::6385287303330840776::1688566199::0::1::::<><><>0<>0<><>::
+plugin.cfg::TextFile/TextFile::-1::1688566199::0::1::::<><><>0<>0<><>::
+plugin.gd::GDScript/GDScript::6263428878565575279::1688566199::0::1::::<>EditorPlugin<><>0<>1<><>::
+SmoothScrollContainer.gd::GDScript/GDScript::6912376393335433512::1695559674::0::1::::<>ScrollContainer<><>0<>1<><>::
+::res://fonts/::1718688883
+::res://fonts/Arapey/::1742727580
+Arapey-Italic.ttf::FontFile/FontFile::9082591106149353466::1697975489::1742727580::1::::<><><>0<>0<>596166b736f6ef85c8bb06f0a794b790<>res://.godot/imported/Arapey-Italic.ttf-79fbb1b2f6cd52aa629b60d6d8fab6f8.fontdata::
+Arapey-Regular.ttf::FontFile/FontFile::5322239218102753160::1697975489::1742727580::1::::<><><>0<>0<>776456046a1d38d6424befac145ab80f<>res://.godot/imported/Arapey-Regular.ttf-2b46b814bf7185b08f7dc22e2d5f2d36.fontdata::
+OFL.txt::TextFile/TextFile::-1::1697975489::0::1::::<><><>0<>0<><>::
+::res://fonts/Courier_Prime/::1742727580
+CourierPrime-Bold.ttf::FontFile/FontFile::2977307025646706682::1718688883::1742727580::1::::<><><>0<>0<>f7728d4b8e1c587cb5dd015f30847660<>res://.godot/imported/CourierPrime-Bold.ttf-d1cdc77950d1d2bf2945dfc79b962ee7.fontdata::
+CourierPrime-BoldItalic.ttf::FontFile/FontFile::8491156175794967255::1718688883::1742727580::1::::<><><>0<>0<>b6e020a6cf2cbf709543eccd5d55e0ed<>res://.godot/imported/CourierPrime-BoldItalic.ttf-a86d4b2a22f40edd4ec312c7ae91cc2e.fontdata::
+CourierPrime-Italic.ttf::FontFile/FontFile::57284679943290268::1718688883::1742727580::1::::<><><>0<>0<>d8d9f2e077bd1eb67172ba068be8258f<>res://.godot/imported/CourierPrime-Italic.ttf-d5a5e832809e72516e353f4f693c47aa.fontdata::
+CourierPrime-Regular.ttf::FontFile/FontFile::6432084654996743019::1718688883::1742727580::1::::<><><>0<>0<>4912d3e3584fc8a2b2f7dd2d37061f8e<>res://.godot/imported/CourierPrime-Regular.ttf-dacb0e625def4aebae87527385eb4196.fontdata::
+::res://fonts/Karla/::1742727580
+Karla-Italic-VariableFont_wght.ttf::FontFile/FontFile::419796339546717715::1709450432::1742727580::1::::<><><>0<>0<>7cb00d2f1981698d0a6e204ace3cb4a2<>res://.godot/imported/Karla-Italic-VariableFont_wght.ttf-5a38b66b15fb5d900c94c0eaa423f743.fontdata::
+Karla-VariableFont_wght.ttf::FontFile/FontFile::8873215923062202772::1709450432::1742727580::1::::<><><>0<>0<>3ddee53c16c96417cc23ec892f07a828<>res://.godot/imported/Karla-VariableFont_wght.ttf-e978426be69072f0d2f0cf82e82f5e9d.fontdata::
+OFL.txt::TextFile/TextFile::-1::1709450432::0::1::::<><><>0<>0<><>::
+README.txt::TextFile/TextFile::-1::1709450432::0::1::::<><><>0<>0<><>::
+::res://fonts/Karla/static/::1742727580
+Karla-Bold.ttf::FontFile/FontFile::8906739302527452267::1709450432::1742727580::1::::<><><>0<>0<>6ac1211390f1c1a0b863b2d8fe17ca15<>res://.godot/imported/Karla-Bold.ttf-2a15c685a86a3e364055c58ab5f995f8.fontdata::
+Karla-BoldItalic.ttf::FontFile/FontFile::1618838816842001350::1709450432::1742727580::1::::<><><>0<>0<>69c30c480c4cf6a13e68d3c0645aae5a<>res://.godot/imported/Karla-BoldItalic.ttf-ebad28dcd3aa062ddd76e2f7e5c7105f.fontdata::
+Karla-ExtraBold.ttf::FontFile/FontFile::4164971597277905885::1709450432::1742727580::1::::<><><>0<>0<>c795e0cfe243fe611620f1947a8f61a1<>res://.godot/imported/Karla-ExtraBold.ttf-234a8a0afb8c48a3172d2ba42a9696eb.fontdata::
+Karla-ExtraBoldItalic.ttf::FontFile/FontFile::2212650846540196067::1709450432::1742727580::1::::<><><>0<>0<>9d67412d64c4d81f0aa7ef40d27e37ab<>res://.godot/imported/Karla-ExtraBoldItalic.ttf-ca80cfa9deeb1e2c131cf923e4da9e30.fontdata::
+Karla-ExtraLight.ttf::FontFile/FontFile::852046388074717864::1709450432::1742727580::1::::<><><>0<>0<>c95195944b4df5dfffba0a990cc0e655<>res://.godot/imported/Karla-ExtraLight.ttf-251d10d8b438a2d4f8d6b7e6064b32c8.fontdata::
+Karla-ExtraLightItalic.ttf::FontFile/FontFile::7942240770200879247::1709450432::1742727580::1::::<><><>0<>0<>4a6bc10cfc04da187b3132f563843a30<>res://.godot/imported/Karla-ExtraLightItalic.ttf-53ec0a7a6ac0f0d9089e8bf648c42547.fontdata::
+Karla-Italic.ttf::FontFile/FontFile::8864985873605873623::1709450432::1742727580::1::::<><><>0<>0<>057af719cb148b85cdd52abeca7e576e<>res://.godot/imported/Karla-Italic.ttf-07d0b04de19cac7c3a3a1886119acefb.fontdata::
+Karla-Light.ttf::FontFile/FontFile::305139999359040108::1709450432::1742727580::1::::<><><>0<>0<>6f67349220af5815e34425270aaac5a4<>res://.godot/imported/Karla-Light.ttf-50c6e5cfe84e27a947a26c35cb8766d9.fontdata::
+Karla-LightItalic.ttf::FontFile/FontFile::374612289434413198::1709450432::1742727580::1::::<><><>0<>0<>cdc0f5061201d5d5bd9686422a9c832e<>res://.godot/imported/Karla-LightItalic.ttf-cbcdf013c8a0681486a52575ed8a0590.fontdata::
+Karla-Medium.ttf::FontFile/FontFile::8117248494927425899::1709450432::1742727580::1::::<><><>0<>0<>b32e8c0b032510dab65514973bb9f38f<>res://.godot/imported/Karla-Medium.ttf-f7316d7c3b5fad5f328a80718f19201f.fontdata::
+Karla-MediumItalic.ttf::FontFile/FontFile::1329741910725026415::1709450432::1742727580::1::::<><><>0<>0<>d55be40333a11d8f74f5258a0ff9f795<>res://.godot/imported/Karla-MediumItalic.ttf-afe2f2fa8f7054d2e28cc9d73b6e26eb.fontdata::
+Karla-Regular.ttf::FontFile/FontFile::3108347055910256682::1709450432::1742727580::1::::<><><>0<>0<>4f72e6002d35e2c7b493988e706174bb<>res://.godot/imported/Karla-Regular.ttf-8c5f03c1c9daee42024ca0b48d5cae4b.fontdata::
+Karla-SemiBold.ttf::FontFile/FontFile::2161085610235699500::1709450432::1742727580::1::::<><><>0<>0<>b0574cfb46aa7845a03371d16e6b0731<>res://.godot/imported/Karla-SemiBold.ttf-1a3e8a37bfa3caf21143d01fcfc8604c.fontdata::
+Karla-SemiBoldItalic.ttf::FontFile/FontFile::2746911274154446981::1709450432::1742727580::1::::<><><>0<>0<>d4e601a7be6564923a38a9b9d99d593a<>res://.godot/imported/Karla-SemiBoldItalic.ttf-6e554f43edf641c7a36604a5ec9a0c8a.fontdata::
+::res://images/::1742727581
+1px.png::CompressedTexture2D/CompressedTexture2D::3482780971522736557::1695223437::1742727580::1::::<><><>0<>0<>2a58f3a84ad37440141c184e06d8ae10<>res://.godot/imported/1px.png-0eef56e3a88a65d1c9f3632827dd54f2.ctex::
+Back.png::CompressedTexture2D/CompressedTexture2D::7555046984521214701::1697983411::1742727580::1::::<><><>0<>0<>542ed08788003de0dd59193751594188<>res://.godot/imported/Back.png-c447ba29c41964101a38803f11e6c37c.ctex::
+cover.png::CompressedTexture2D/CompressedTexture2D::1111982858636214684::1698132876::1742727581::1::::<><><>0<>0<>dd7b03dfd5b3b0e01b20fab646a07ff8<>res://.godot/imported/cover.png-ab8682a9e0cee9a5eaa0c45432f7f8bb.ctex::
+Gradient.png::CompressedTexture2D/CompressedTexture2D::2697012357657833663::1709450432::1742727581::1::::<><><>0<>0<>a0d848a6380b9ca9af129d775db24b5a<>res://.godot/imported/Gradient.png-72f90ee2c709308bb3305ba04a92cedd.ctex::
+Rectangle_Rounded.png::CompressedTexture2D/CompressedTexture2D::7664874299478383554::1735661011::1742727580::1::::<><><>0<>0<>f0e3f4312ff9402d4b1491276836bc02<>res://.godot/imported/Rectangle_Rounded.png-c91f86ba6073450923f44288cd1c94a4.ctex::
+Rectangle_Rounded_H.png::CompressedTexture2D/CompressedTexture2D::8469092636628963607::1735724530::1742727580::1::::<><><>0<>0<>591e26116ea23aced31aeea1c0966515<>res://.godot/imported/Rectangle_Rounded_H.png-1564101230be8103af70cfeb8a094689.ctex::
+Settings.png::CompressedTexture2D/CompressedTexture2D::7691404635061198728::1697983212::1742727580::1::::<><><>0<>0<>e22614cb87908b5c5d3b89460c800949<>res://.godot/imported/Settings.png-3f073005fc7a72bcb7f20c441a28d642.ctex::
+Square_Rounded.png::CompressedTexture2D/CompressedTexture2D::7315019781184612493::1709450432::1742727580::1::::<><><>0<>0<>9ae472c59e910ff0614cd6013835ae9d<>res://.godot/imported/Square_Rounded.png-49be41173d1b42d60af0f961067d62fe.ctex::
+::res://images/Addons/::1742727581
+Effects - Inactive.png::CompressedTexture2D/CompressedTexture2D::6635286423398257790::1709450432::1742727581::1::::<><><>0<>0<>4c5c12e6df7e78b8580d135bd0eed0aa<>res://.godot/imported/Effects - Inactive.png-eae5835a98a9ff82b044dd580afbd7f4.ctex::
+Effects.png::CompressedTexture2D/CompressedTexture2D::2005072583253155382::1709450432::1742727581::1::::<><><>0<>0<>90469f214482a09a28d40824a7151ddd<>res://.godot/imported/Effects.png-54136fba6b3cf211a53e8d08af7517e9.ctex::
+Music  - Inactive.png::CompressedTexture2D/CompressedTexture2D::173557243833175553::1709450432::1742727581::1::::<><><>0<>0<>4ccfd492c44fcaefe42773d512b76635<>res://.godot/imported/Music  - Inactive.png-fd70c653061f8e2f4d1046f6fd7e5c49.ctex::
+Music.png::CompressedTexture2D/CompressedTexture2D::8819262595952430453::1709450432::1742727581::1::::<><><>0<>0<>06b5da693f47f5605145977095f47081<>res://.godot/imported/Music.png-d75e8cfdb87dcd33b989a0a5de0d15b0.ctex::
+Narration  - Inactive.png::CompressedTexture2D/CompressedTexture2D::955291862875404386::1709450432::1742727581::1::::<><><>0<>0<>4eaa510738a6cc9e75041ca33ade254f<>res://.godot/imported/Narration  - Inactive.png-7e7f6af3380ca970b0d76050744ec5d6.ctex::
+Narration.png::CompressedTexture2D/CompressedTexture2D::1965524836439797753::1709450432::1742727581::1::::<><><>0<>0<>22d771ee0a48a1605760e5bee9bf2081<>res://.godot/imported/Narration.png-89669a60b5b01988562b491fc27516df.ctex::
+Puzzle - Inactive.png::CompressedTexture2D/CompressedTexture2D::6649561538958426710::1709450432::1742727581::1::::<><><>0<>0<>24d8fef4aab9537ecb1f5f73dd128a8d<>res://.godot/imported/Puzzle - Inactive.png-930cff23ba58ebfc7d79a07e568a4c9d.ctex::
+Puzzle.png::CompressedTexture2D/CompressedTexture2D::2886812637260840409::1709450432::1742727581::1::::<><><>0<>0<>c05751c0c76ca6dbacd03dbc4b244800<>res://.godot/imported/Puzzle.png-5972bf46ca47d61c8d2faa3ebac61cc8.ctex::
+::res://images/effects/::1742727581
+Leaf.png::CompressedTexture2D/CompressedTexture2D::7868492503187332138::1718688883::1742727581::1::::<><><>0<>0<>784c529171e18e2b555449a55bd79713<>res://.godot/imported/Leaf.png-b3acd144a4f8ae9e99d99a0f55395432.ctex::
+smoke.png::CompressedTexture2D/CompressedTexture2D::1493000236089449723::1709450432::1742727581::1::::<><><>0<>0<>050c000b40f849521012d234535dce74<>res://.godot/imported/smoke.png-2e5e72a5f659cb337c68aea973e2cc87.ctex::
+::res://images/Types/::1742727581
+Advanced Multi Ending.png::CompressedTexture2D/CompressedTexture2D::1355036729647728709::1709450432::1742727581::1::::<><><>0<>0<>dc68aabc67c0b8426b73a2dae66b3b71<>res://.godot/imported/Advanced Multi Ending.png-3897a4c8c21f1f60ac80acf464461263.ctex::
+Adventure.png::CompressedTexture2D/CompressedTexture2D::8042995064786178220::1735729611::1742727581::1::::<><><>0<>0<>2ba71018f511576278993b2668341e8c<>res://.godot/imported/Adventure.png-d9b46322fb634ee04ac9901425fc121b.ctex::
+Linear.png::CompressedTexture2D/CompressedTexture2D::8642840912048127101::1709450432::1742727581::1::::<><><>0<>0<>798133afbb03bff8df17ed9e5d947fb2<>res://.godot/imported/Linear.png-626bc10f0c167b8b5795e5bd4959ba1d.ctex::
+Looping.png::CompressedTexture2D/CompressedTexture2D::4340741851629055898::1709450432::1742727581::1::::<><><>0<>0<>38653db541d0f4c0278159213cd34796<>res://.godot/imported/Looping.png-a9639e5dbf66d52191e52b59a0d0d7b7.ctex::
+Mono Ending.png::CompressedTexture2D/CompressedTexture2D::2807954823505435608::1709450432::1742727581::1::::<><><>0<>0<>1b47f80e5357087411877f24b4d68be3<>res://.godot/imported/Mono Ending.png-6a1cff9fe295aeaa9a42d36315f76bae.ctex::
+Multi Ending.png::CompressedTexture2D/CompressedTexture2D::7937568080812780137::1709450432::1742727581::1::::<><><>0<>0<>48d2e33d7af3cb48a855678300b552d4<>res://.godot/imported/Multi Ending.png-01d382be0e4e18c6265d3bebf0517edb.ctex::
+Undefined.png::CompressedTexture2D/CompressedTexture2D::2450957494510326006::1709450432::1742727581::1::::<><><>0<>0<>1f1baf7a23e86b75f8c47e31a69da8a3<>res://.godot/imported/Undefined.png-721903f1c328e79bd298257494e8ff60.ctex::
+::res://images/Types/End of The Beginning/::1742727582
+cover.png::CompressedTexture2D/CompressedTexture2D::1606908249272588087::1735924388::1742727582::1::::<><><>0<>0<>e532d055815def62293849e10d2825bd<>res://.godot/imported/cover.png-9b31ed4511d455e90f7aa2ac05d11f97.ctex::
+story.txt::TextFile/TextFile::-1::1735924388::0::1::::<><><>0<>0<><>::
+::res://images/Types/End of The Beginning/images/::1742727581
+this.jpg::CompressedTexture2D/CompressedTexture2D::618936188322931826::1735924388::1742727581::1::::<><><>0<>0<>678bb4b199e76eb3b6a1e666fd1d8bb9<>res://.godot/imported/this.jpg-5377554ea5ab08ac195e876dff74a9ff.ctex::
+::res://images/Types/End of The Beginning/music/::1742727580
+chill2.mp3::AudioStreamMP3/AudioStreamMP3::5330174408110103486::1735924388::1742727580::1::::<><><>0<>0<>0aac9c6101f8bdc18e24a0590a83c399<>res://.godot/imported/chill2.mp3-a5075830e3b3248a7a98ada261d4fec5.mp3str::
+chill.mp3::AudioStreamMP3/AudioStreamMP3::6593367546313473084::1735924388::1742727580::1::::<><><>0<>0<>4c76ab408737720243e8e4497c0feb41<>res://.godot/imported/chill.mp3-347fe6fe297426d74b1d2975dcc70d2b.mp3str::
+::res://images/Types/End of The Beginning/narration/::1742727580
+nar1.mp3::AudioStreamMP3/AudioStreamMP3::4068577880476032453::1735924388::1742727580::1::::<><><>0<>0<>57a6d81c29193530ee0396ef2da7d429<>res://.godot/imported/nar1.mp3-f32f7f6a5f60281d1ef3e1fcbe40efa6.mp3str::
+::res://images/Types/Love, Freya/::1742727581
+cover.png::CompressedTexture2D/CompressedTexture2D::7519088308759970906::1735924388::1742727581::1::::<><><>0<>0<>fb6941d86f88d69158296117aa919928<>res://.godot/imported/cover.png-d7e1bd99c82c9dec65783536fda6493c.ctex::
+story.txt::TextFile/TextFile::-1::1735924388::0::1::::<><><>0<>0<><>::
+::res://images/Types/Love, Freya (Novelized)/::1742727582
+cover.png::CompressedTexture2D/CompressedTexture2D::5868718236302609406::1735924388::1742727582::1::::<><><>0<>0<>26223ce3957bead5c30ebf39d1b5d192<>res://.godot/imported/cover.png-6d3fa263e2ef7368b2bad87eaf6a68f3.ctex::
+story.txt::TextFile/TextFile::-1::1735924388::0::1::::<><><>0<>0<><>::
+::res://images/Types/Morbid Tales From The Heart/::1742727581
+cover.png::CompressedTexture2D/CompressedTexture2D::8226490951766113271::1735924388::1742727581::1::::<><><>0<>0<>44166c6da030524c7a27f70e16e15807<>res://.godot/imported/cover.png-6cab7182cdb7e9d973a5b485219c7201.ctex::
+story.txt::TextFile/TextFile::-1::1735924388::0::1::::<><><>0<>0<><>::
+::res://scenes/::1742727604
+book_template.tscn::PackedScene/PackedScene::3894757113756572356::1742727604::0::1::::<><><>0<>0<><>::uid://bej74pacdrpv8::::res://themes/main_theme.tres<>uid://p3wgvw5gqdk3::::res://images/cover.png<>uid://dy5qxvpes702r::::res://fonts/Karla/static/Karla-Bold.ttf
+control.tscn::PackedScene/PackedScene::3817967020634879657::1742727604::0::1::::<><><>0<>0<><>::uid://badpdsvwacrug::::res://scripts/main_menu.gd<>uid://blgod2jmmvugt::::res://scripts/story_manager.gd<>uid://b4lp6lqnktk25::::res://scripts/Global.gd<>uid://bpvc5ngmcx44h::::res://images/1px.png<>uid://csxhrl2dse1p0::::res://scenes/label_template.tscn<>uid://bvqwc0hga4wpg::::res://scenes/book_template.tscn<>uid://b1f267ha507he::::res://scenes/image_template.tscn<>uid://cq0c5aosxebry::::res://scenes/buttons/button_template.tscn<>uid://c5qn3gwku3t1i::::res://addons/SmoothScroll/SmoothScrollContainer.gd<>uid://p3wgvw5gqdk3::::res://images/cover.png<>uid://d3ea6wtgu8qww::::res://scenes/story_menu.gd<>uid://beopnt2v16w8n::::res://images/Gradient.png<>uid://clk1tlt2sbt5w::::res://scripts/settings_manager.gd<>uid://dvewled2tdi1b::::res://images/Types/Linear.png<>uid://bgaguugjdrpyu::::res://images/Types/Mono Ending.png<>uid://c178cbr70bedm::::res://scenes/password_template.tscn<>uid://bej74pacdrpv8::::res://themes/main_theme.tres<>uid://dldat7dvyxjfd::::res://images/Types/Multi Ending.png<>uid://dfvyrxfhk6jl2::::res://images/Back.png<>uid://dht1ktci5sl01::::res://images/Settings.png<>uid://c1sggy337f2de::::res://images/Addons/Effects - Inactive.png<>uid://cif6x73nb4qd7::::res://scenes/buttons/button_story_menu.tscn<>uid://b23xnca5xnedm::::res://images/Types/Looping.png<>uid://bq5jfr5re73qh::::res://scenes/buttons/button_bookmark.tscn<>uid://yejs0jld7mm8::::res://scenes/pattern_template.tscn<>uid://3tjit5kyto6i::::res://images/Addons/Effects.png<>uid://cbju54nj8dknq::::res://scripts/bookmarks.gd<>uid://ba6i6adft5yxi::::res://images/Types/Undefined.png<>uid://tkni0byghju8::::res://images/Types/Advanced Multi Ending.png<>uid://bhennaas5py0p::::res://images/Addons/Puzzle.png<>uid://dmuc7ondy2cbk::::res://images/Types/Adventure.png<>uid://c10dko6v8lwfm::::res://images/Addons/Puzzle - Inactive.png<>uid://dxwd74hff4x5f::::res://images/Addons/Music.png<>uid://3ad53mm6885b::::res://images/Addons/Narration.png<>uid://cqcpyudd6tqn::::res://images/Addons/Music  - Inactive.png<>uid://nu0ruel3u0ne::::res://images/Addons/Narration  - Inactive.png<>uid://dswqyopa4brq2::::res://images/Rectangle_Rounded_H.png<>uid://cxv0q2w7gukrb::::res://fonts/Courier_Prime/CourierPrime-Regular.ttf<>uid://j63v7nixrofq::::res://scripts/effects_manager.gd<>uid://dhg6mh87hpbpy::::res://images/Rectangle_Rounded.png<>uid://vjhq4djx4w00::::res://images/effects/smoke.png<>uid://bke64bl1drn40::::res://sounds/effects/rain.mp3<>uid://dkds6l0nm06u5::::res://images/effects/Leaf.png<>uid://c7vyhix6wvwvn::::res://sounds/effects/fire.mp3<>uid://dqopp27w3uetu::::res://sounds/effects/thunder.mp3<>uid://boxvkf2b0ncw3::::res://sounds/effects/snow.mp3<>uid://3kvc4lo6sivy::::res://sounds/effects/fireflies.mp3
+image_template.tscn::PackedScene/PackedScene::4223348917069933658::1742727604::0::1::::<><><>0<>0<><>::
+label_template.tscn::PackedScene/PackedScene::6084177238287027295::1742727604::0::1::::<><><>0<>0<><>::uid://bej74pacdrpv8::::res://themes/main_theme.tres
+password_template.tscn::PackedScene/PackedScene::6665818702726471258::1742727604::0::1::::<><><>0<>0<><>::uid://bej74pacdrpv8::::res://themes/main_theme.tres
+pattern_template.tscn::PackedScene/PackedScene::1693369683046266681::1742727604::0::1::::<><><>0<>0<><>::uid://bcdxttkq7r7yh::::res://scripts/pattern_script.gd<>uid://bej74pacdrpv8::::res://themes/main_theme.tres
+story_menu.gd::GDScript/GDScript::9132863728737143434::1735926929::0::1::::<>Control<><>0<>0<><>::
+::res://scenes/buttons/::1742727604
+button_bookmark.tscn::PackedScene/PackedScene::3571929836447958263::1742727603::0::1::::<><><>0<>0<><>::uid://bej74pacdrpv8::::res://themes/main_theme.tres
+button_story_menu.tscn::PackedScene/PackedScene::5346599029891216606::1742727603::0::1::::<><><>0<>0<><>::uid://bej74pacdrpv8::::res://themes/main_theme.tres
+button_template.tscn::PackedScene/PackedScene::5947647339724888622::1742727604::0::1::::<><><>0<>0<><>::uid://bej74pacdrpv8::::res://themes/main_theme.tres
+::res://scripts/::1742727579
+bookmarks.gd::GDScript/GDScript::4862879068196008058::1735926929::0::1::::<>Control<><>0<>0<><>::
+effects_manager.gd::GDScript/GDScript::697434581812173994::1736868445::0::1::::EffectsManager<>Control<><>0<>0<><>::
+Global.gd::GDScript/GDScript::4445572022071751860::1736781667::0::1::::<>Node<><>0<>0<><>::
+main_menu.gd::GDScript/GDScript::2393530908089365634::1735928250::0::1::::<>Control<><>0<>0<><>::
+pattern_script.gd::GDScript/GDScript::2534422939311299263::1699154979::0::1::::<>VBoxContainer<><>0<>0<><>::
+settings_manager.gd::GDScript/GDScript::5567175605200285478::1736775036::0::1::::<>Control<><>0<>0<><>::
+story_manager.gd::GDScript/GDScript::3171741058112064599::1736868714::0::1::::StoryManager<>Control<><>0<>0<><>::
+::res://sounds/::1718688883
+::res://sounds/effects/::1742727580
+fire.mp3::AudioStreamMP3/AudioStreamMP3::7063706462178274903::1718688883::1742727580::1::::<><><>0<>0<>048445b11f316b655650172257fc8c1c<>res://.godot/imported/fire.mp3-68fcd1ba491c9a99b23f976e64ee206e.mp3str::
+fireflies.mp3::AudioStreamMP3/AudioStreamMP3::1987211568689652610::1718688883::1742727580::1::::<><><>0<>0<>bb583e326eb4ed16f935af8b594919ef<>res://.godot/imported/fireflies.mp3-6fbb0820334a65614b6333950d12d654.mp3str::
+rain.mp3::AudioStreamMP3/AudioStreamMP3::3098500716590879327::1718688883::1742727580::1::::<><><>0<>0<>4c5734b9f1eb203b857601becf89b68b<>res://.godot/imported/rain.mp3-d9b55c6b0f99c1e8525e4c754bcb030f.mp3str::
+snow.mp3::AudioStreamMP3/AudioStreamMP3::3417838402161901800::1718688883::1742727580::1::::<><><>0<>0<>33aa28bd90acbfa1105a51a3375b56fe<>res://.godot/imported/snow.mp3-b4d2642e5960c52bd46902ecbf65250d.mp3str::
+thunder.mp3::AudioStreamMP3/AudioStreamMP3::8312123848246711882::1718688883::1742727580::1::::<><><>0<>0<>adb58c88d736520f7f30b8baf0c4a07a<>res://.godot/imported/thunder.mp3-ac5f974839d22c374d17094e9a2fcd48.mp3str::
+::res://stories/::1735925963
+::res://stories/End of The Beginning/::1742727581
+cover.png::CompressedTexture2D/CompressedTexture2D::1606908249272588087::1712497236::1742727581::1::::<><><>0<>0<>a5ff90e5f21cff1fcd58a8f0a6e3d807<>res://.godot/imported/cover.png-641286dcba0122e3968a9908c927e82d.ctex::
+story.txt::TextFile/TextFile::-1::1737471554::0::1::::<><><>0<>0<><>::
+::res://stories/End of The Beginning/images/::1742727581
+this.jpg::CompressedTexture2D/CompressedTexture2D::618936188322931826::1712497236::1742727581::1::::<><><>0<>0<>b36b211306a693d060faf1c6326eda27<>res://.godot/imported/this.jpg-31cc67111d0f0aa0c8add8179d98726a.ctex::
+::res://stories/End of The Beginning/music/::1742727580
+chill2.mp3::AudioStreamMP3/AudioStreamMP3::5330174408110103486::1712497236::1742727580::1::::<><><>0<>0<>f1eda0db0f2956919fa6afccfa9a885d<>res://.godot/imported/chill2.mp3-3849e4ca3849cd72e6cf4a9bc124dea3.mp3str::
+chill.mp3::AudioStreamMP3/AudioStreamMP3::6593367546313473084::1712497236::1742727580::1::::<><><>0<>0<>8f20baa31b43de855c294e51cb023913<>res://.godot/imported/chill.mp3-90287ecceb2e47b0131d43c18c3d2c49.mp3str::
+::res://stories/End of The Beginning/narration/::1742727580
+nar1.mp3::AudioStreamMP3/AudioStreamMP3::4068577880476032453::1712497236::1742727580::1::::<><><>0<>0<>6e029f650a04e368319065b9b6815863<>res://.godot/imported/nar1.mp3-68ad40f647dc7000512275c13e6b45af.mp3str::
+::res://stories/Love, Freya (Novelized)/::1742727581
+cover.png::CompressedTexture2D/CompressedTexture2D::5868718236302609406::1712497236::1742727581::1::::<><><>0<>0<>e5737558825ddbf41427cca1245ff0ab<>res://.godot/imported/cover.png-10225e4371fd50079c9d38a330d1f242.ctex::
+story.txt::TextFile/TextFile::-1::1712497236::0::1::::<><><>0<>0<><>::
+::res://stories/Morbid Tales From The Heart/::1742727581
+cover.png::CompressedTexture2D/CompressedTexture2D::8226490951766113271::1721826852::1742727581::1::::<><><>0<>0<>137c758c908849fe7d4deac1a6f34044<>res://.godot/imported/cover.png-ea3ce99772b81622a74dd23673ef6fe1.ctex::
+story.txt::TextFile/TextFile::-1::1736434243::0::1::::<><><>0<>0<><>::
+::res://themes/::1737548820
+main_theme.tres::Theme/Theme::2687750977769355679::1737548820::0::1::::<><><>0<>0<><>::uid://d2nw7irhu82xy::::res://fonts/Arapey/Arapey-Italic.ttf<>uid://ch3ercxybfon5::::res://fonts/Arapey/Arapey-Regular.ttf
+story_theme.tres::Theme/Theme::6140174319794186886::1736695048::0::1::::<><><>0<>0<><>::uid://d2nw7irhu82xy::::res://fonts/Arapey/Arapey-Italic.ttf<>uid://ch3ercxybfon5::::res://fonts/Arapey/Arapey-Regular.ttf
+type_theme.tres::Theme/Theme::3303795979663739279::1736694776::0::1::::<><><>0<>0<><>::uid://cxv0q2w7gukrb::::res://fonts/Courier_Prime/CourierPrime-Regular.ttf<>uid://bioh2ul64pq0a::::res://fonts/Courier_Prime/CourierPrime-Bold.ttf<>uid://ds8gdpq6y3bl4::::res://fonts/Courier_Prime/CourierPrime-BoldItalic.ttf<>uid://20p8xbhcolo::::res://fonts/Courier_Prime/CourierPrime-Italic.ttf
